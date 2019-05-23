@@ -249,7 +249,9 @@ class Island < ApplicationRecord
 
   belongs_to :user
   has_many :bookings
-  has_many :reviews, through: :bookings
+  has_many :reviews, through: :bookings, dependent: :destroy
+
+  mount_uploader :photo, PhotoUploader
 
   validates :name, presence: true
   validates :country, presence: true, inclusion: { in: COUNTRIES,
