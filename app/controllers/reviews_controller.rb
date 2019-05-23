@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.booking = @booking
     if @review.save
-      redirect_to islands_path(@booking.island_id)
+      redirect_to root_path
     else
       render :new
     end

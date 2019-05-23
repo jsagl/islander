@@ -258,7 +258,7 @@ class Island < ApplicationRecord
     message: "It is not a valid country" }
   validates :title, presence: true, length: { minimum: 10, maximum: 150 }
   validates :description, presence: true
-  validates :rating, numericality: true
+  validates :rating, allow_nil: true, numericality: true
   validates :price_per_day, presence: true, numericality: { only_integer: true, greater_than: 0 }
   validates :number_of_guests, presence: true, numericality: { only_integer: true, greater_than: 0 }
 end
