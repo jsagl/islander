@@ -1,2 +1,17 @@
-<h1>Islands#show</h1>
-<p>Find me in app/views/islands/show.html.erb</p>
+<div class="card-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path @island.photo %>)">
+  <h1><%= @island.title %></h1>
+  <h2><%= @island.name %></h2>
+  <h2>About </h2>
+<p><%=@island.description%></p>
+<p>Number of guests : <%=@island.number_of_guests%></p>
+<p> Price per day : <%=@price_per_day%></p>
+</div>
+<h2>About the owner</h2>
+<h2>Reviews</h2>
+<br><% @island.reviews.each do |review|%></h1>
+  <p><%=review.content%></p>
+  <p><%=review.rating%></p>
+<br>
+<br>
+<%= link_to "Go back to islands list", islands_path, class: "btn btn-primary"%>
+
