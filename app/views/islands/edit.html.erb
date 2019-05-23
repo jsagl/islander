@@ -1,2 +1,15 @@
-<h1>Islands#edit</h1>
-<p>Find me in app/views/islands/edit.html.erb</p>
+<h1>Edit my awesome island</h1>
+
+<%= simple_form_for @island do |f| %>
+  <%= f.input :name %>
+  <%= f.input :country %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :number_of_guests %>
+  <%= f.input :price_per_day %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.submit "Confirm", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to "Cancel", island_path(@island), class: "btn btn-danger" %>
