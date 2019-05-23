@@ -1,21 +1,5 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-      # t.string :name
-      # t.string :country
-      # t.decimal :lat
-      # t.decimal :lng
-      # t.string :title
-      # t.text :description
-      # t.float :rating
-      # t.integer :number_of_guests
-      # t.integer :price_per_day
-      # t.references :user, foreign_key: true
 
 
 puts "Cleaning up database..."
@@ -32,7 +16,6 @@ jean = User.create!(
   birth_date: "29/02/1988",
   description: "Jean Saglio lead dev of Islander"
   )
-end
 
 
 franz = User.create!(
@@ -43,7 +26,15 @@ franz = User.create!(
   birth_date: "29/02/1988",
   description: "Franz Franz Chief Happiness Officer at Islander"
   )
-end
+
+marie_auxille = User.create!(
+  email: "marie-auxille@gmail.com",
+  password: "12345678",
+  first_name: "marie-Auxille",
+  last_name: "Denis",
+  birth_date: "29/02/2000",
+  description: "Porquerolles girl"
+  )
 
 
 
@@ -62,7 +53,6 @@ corse = Island.create!(
   photo: "corse_tobxyj",
   user_id: 1
 )
-end
 
 angleterre = Island.create!(
   name: "Angleterre",
@@ -77,7 +67,6 @@ angleterre = Island.create!(
   photo: "lgwh5cz7nndtms0deold",
   user_id: 1
 )
-end
 
 puts "Seeding completed!"
 
