@@ -1,0 +1,7 @@
+<h1> Create a new reviews </h1>
+
+<%= simple_form_for [@booking, @review] do |f|  %>
+  <%= f.input :content  %>
+  <%= f.input :stars  %>
+  <%= f.submit "submit", class:'btn btn-primary' %>
+<% end %>
