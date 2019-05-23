@@ -10,10 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_23_120527) do
+ActiveRecord::Schema.define(version: 2019_05_23_123835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer "total_price"
+    t.bigint "island_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["island_id"], name: "index_bookings_on_island_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "islands", force: :cascade do |t|
+    t.string "name"
+    t.string "country"
+    t.decimal "lat"
+    t.decimal "lng"
+    t.string "title"
+    t.text "description"
+    t.float "rating"
+    t.integer "number_of_guests"
+    t.integer "price_per_day"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_islands_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "stars"
+    t.bigint "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +60,16 @@ ActiveRecord::Schema.define(version: 2019_05_23_120527) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.datetime "birth_date"
+    t.text "description"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "islands"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "islands", "users"
+  add_foreign_key "reviews", "bookings"
 end
