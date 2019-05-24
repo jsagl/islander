@@ -1,3 +1,4 @@
+
 <div class="banner-home" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://source.unsplash.com/500x400/?island');">
   <div class="banner-content">
     <h1>Book your island!</h1>
@@ -45,11 +46,11 @@
         </div>
       </div>
     <% end %>
+  
+    <% if policy(Island).create? %>
+      <%= link_to "Add an island", new_island_path, class: "btn btn-primary"%>
+    <% end %>
   </div>
 </div>
 
-
-<% if policy(Island).create? %>
-  <%= link_to "Add an island", new_island_path, class: "btn btn-primary"%>
-<% end %>
 
