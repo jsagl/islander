@@ -1,13 +1,14 @@
 .banner-home {
   color: white;
   text-align: center;
-  height: 400px;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-size: cover !important;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 32px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .banner-home h1 {
   font-size: 50px;
