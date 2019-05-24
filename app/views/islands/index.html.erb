@@ -5,6 +5,7 @@
   <div class="card-island col-md-3">
     <h3><%=island.title%></h3>
     <h3><%=island.name%></h3>
+    <%= cl_image_tag island.photo, height: 300, width: 400, crop: :fill %>
   <p> <%= link_to "Delete this island", island_path(island), method: :delete, data: { confirm: "Are you sure?" } %></p>
 
     <%=link_to "Know more about this island", island_path(island)%>
@@ -14,6 +15,7 @@
     <%#=image_tag("cocktail.jpg",width: 500) %>
   </div>
   <% end %>
+  <%= link_to "Add an island", new_island_path, class: "btn btn-primary"%></p>
   </div>
 </div>
 

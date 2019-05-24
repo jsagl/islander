@@ -28,7 +28,7 @@ franz = User.create!(
   )
 
 marie_auxille = User.create!(
-  email: "marie-auxille@gmail.com",
+  email: "marieauxille@gmail.com",
   password: "12345678",
   first_name: "marie-Auxille",
   last_name: "Denis",
@@ -40,21 +40,21 @@ marie_auxille = User.create!(
 
 puts "Creating islands..."
 
-corse = Island.create!(
-  name: "Corse",
-  country: "France",
-  lat: 42.039604,
-  lng: 9.012893,
-  title: "Louez la Corse",
-  description: "Saucisses et indépendantistes au rdv",
-  rating: 5.2,
-  number_of_guests: 4,
-  price_per_day: 1,
-  photo: "corse_tobxyj",
-  user_id: 1
-)
-
-angleterre = Island.create!(
+# corse = Island.create!(
+#   name: "Corse",
+#   country: "France",
+#   lat: 42.039604,
+#   lng: 9.012893,
+#   title: "Louez la Corse",
+#   description: "Saucisses et indépendantistes au rdv",
+#   rating: 5.2,
+#   number_of_guests: 4,
+#   price_per_day: 1,
+#   photo: "hrvoje-klaric-1470744-unsplash_cykfzc",
+#   user_id: 1
+# )
+u = User.first
+angleterre = Island.new(
   name: "Angleterre",
   country: "United Kingdom",
   lat: 51.509865,
@@ -64,9 +64,10 @@ angleterre = Island.create!(
   rating: 0.2,
   number_of_guests: 11,
   price_per_day: 999,
-  photo: "lgwh5cz7nndtms0deold",
-  user_id: 1
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558704355/john-westrock-706905-unsplash_pr7vc7.jpg",
+  user_id: u.id
 )
+angleterre.save
 
 puts "Seeding completed!"
 
