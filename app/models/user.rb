@@ -12,5 +12,5 @@ class User < ApplicationRecord
   validates :last_name, presence: true, length: { minimum: 2 }, format: { with: /\A[\p{L}\s'.-]+\z/,
     message: "Please only use letters" }
   validates :birth_date, presence: true
-  validates :description, presence: true, length: { minimum: 15 }
+  validates :description, presence: true
 end
