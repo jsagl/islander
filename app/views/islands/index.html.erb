@@ -12,10 +12,11 @@
     <br>
     <%= link_to "Book now", new_island_booking_path(island), class: "btn btn-primary"%>
     <%#=image_tag("cocktail.jpg",width: 500) %>
-    <%= link_to "Add an island", new_island_path, class: "btn btn-primary"%></p>
-
   </div>
   <% end %>
   </div>
 </div>
-<p></p>
+
+<% if policy(Island).create? %>
+  <%= link_to "Add an island", new_island_path, class: "btn btn-primary"%>
+<% end %>
