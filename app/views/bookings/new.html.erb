@@ -1,4 +1,4 @@
-<h1>Book @island.name</h1>
+<h1>Book <%= @island.name %></h1>
 
 <%= simple_form_for [@island, @booking] do |f| %>
   <%= f.input :start_date %>
