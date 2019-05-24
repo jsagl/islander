@@ -2,7 +2,8 @@
   <div class="big-card d-flex">
 
     <div class="card-trip">
-      <img src="https://www.planetware.com/photos-large/SEY/best-islands-seychelles.jpg">
+<!--       <img src="https://www.planetware.com/photos-large/SEY/best-islands-seychelles.jpg"> -->
+      <%= cl_image_tag @island.photo, height: 300, width: 400, crop: :fill %>
       <div class="card-trip-infos">
         <div>
           <h2><%= @island.name %></h2>
