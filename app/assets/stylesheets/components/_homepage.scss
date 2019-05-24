@@ -1,0 +1,104 @@
+.banner-home {
+  color: white;
+  text-align: center;
+  height: 400px;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+.banner-home h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner-home p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
+.flex {
+  display: flex;
+}
+.flex-align {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-island-card {
+  width: 100%;
+  position: relative;
+  margin: .5rem 0 1rem 0;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+}
+
+.home-island-card-image {
+  height: 180px;
+  background-position: center;
+  background-size: cover;
+}
+
+.home-island-card-content {
+  padding: 24px;
+  background-color: #F8F9FA;
+}
+
+.home-island-card-actions {
+  position: relative;
+  background-color: inherit;
+  border-top: 1px solid rgba(160,160,160,0.2);
+  padding: 16px 24px;
+}
+
+
+
+.search-card {
+  background: #F8F9FA;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  border-radius: 3px;
+}
+
+
+
+.home-card {
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+}
+.home-card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.home-card-description h2 {
+  font-size: 24px;
+}
+.home-card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.home-card-link:hover {
+  opacity: 0.1;
+}
+
+
+

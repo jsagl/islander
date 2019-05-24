@@ -1,24 +1,56 @@
-<h1></h1>
-<h2>Book an Island</h2>
-<div class="card-container">
-  <%@islands.each do |island|%>
-  <div class="card-island col-md-3">
-    <h3><%=island.title%></h3>
-    <h3><%=island.name%></h3>
-    <%= cl_image_tag island.photo, height: 300, width: 400, crop: :fill %>
-  <p> <%= link_to "Delete this island", island_path(island), method: :delete, data: { confirm: "Are you sure?" } %></p>
 
-    <%=link_to "Know more about this island", island_path(island)%>
-    <br>
-    <br>
-    <%= link_to "Book now", new_island_booking_path(island), class: "btn btn-primary"%>
-    <%#=image_tag("cocktail.jpg",width: 500) %>
-  </div>
-  <% end %>
-  <%= link_to "Add an island", new_island_path, class: "btn btn-primary"%></p>
+<div class="banner-home" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://source.unsplash.com/500x400/?island');">
+  <div class="banner-content">
+    <h1>Book your island!</h1>
   </div>
 </div>
 
-<% if policy(Island).create? %>
-  <%= link_to "Add an island", new_island_path, class: "btn btn-primary"%>
-<% end %>
+
+<div class="container mt-3">
+<!-- card search -->
+  <div class="row">
+    <div class="col-4">
+      <div class="search-card">
+        <h5>Search an island!</h5>
+        <%= simple_form_for(@island) do |f| %>
+        <%= f.input :number_of_guests, class: "input-group-addon" %>
+        <%= f.input :country, class: "input-group-addon" %>
+        <%= f.submit "Search", class: "btn btn-success mt-2" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+<!-- island cards -->
+
+  <div class="row">
+    <div class="col-12">
+      <h1>All our islands</h1>
+    </div>
+  </div>
+  <div class="row">
+    <% @islands.each do |island| %>
+      <div class="col-4">
+        <div class="home-island-card">
+          <div class="home-island-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_tag island.photo %>');">
+            <div class="home-island-card-content">
+              <h4><%= island.title %></h4>
+              <p><%= island.name %></p>
+              <p><%= island.country %></p>
+            </div>
+            <div class="home-island-card-actions">
+              <%= link_to "Know more about this island", island_path(island), class: 'home-card-link' %>
+              <%= link_to "Book now", new_island_booking_path(island), class: "home-card-link"%>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  
+    <% if policy(Island).create? %>
+      <%= link_to "Add an island", new_island_path, class: "btn btn-primary"%>
+    <% end %>
+  </div>
+</div>
+
+
