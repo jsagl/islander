@@ -3,10 +3,12 @@ class BookingsController < ApplicationController
   before_action :find_booking, only: [:show, :destroy]
 
   def show
+    authorize @booking
   end
 
   def new
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
@@ -14,6 +16,7 @@ class BookingsController < ApplicationController
     @booking.island = @island
     @booking.user = current_user
     @booking.total_price = ((@booking.end_date - @booking.start_date) / 24 / 3600).ceil * @island.price_per_day
+    authorize @booking
     if @booking.save
       redirect_to booking_path(@booking)
     else
@@ -22,6 +25,7 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    authorize @booking
     @booking.destroy
     redirect_to island_path(@booking.island)
   end

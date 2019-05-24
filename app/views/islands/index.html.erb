@@ -27,7 +27,6 @@
       <h1>All our islands</h1>
     </div>
   </div>
-
   <div class="row">
     <% @islands.each do |island| %>
       <div class="col-4">
@@ -38,26 +37,19 @@
               <p><%= island.name %></p>
               <p><%= island.country %></p>
             </div>
-
             <div class="home-island-card-actions">
               <%= link_to "Know more about this island", island_path(island), class: 'home-card-link' %>
               <%= link_to "Book now", new_island_booking_path(island), class: "home-card-link"%>
-              <%= link_to "Add an island", new_island_path, class: "home-card-link"%></p>
             </div>
           </div>
         </div>
       </div>
     <% end %>
   </div>
-
 </div>
 
 
-
-
-
-
-
-
-
+<% if policy(Island).create? %>
+  <%= link_to "Add an island", new_island_path, class: "btn btn-primary"%>
+<% end %>
 
