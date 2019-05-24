@@ -10,8 +10,13 @@
 <h2>Reviews</h2>
 <br><% @island.reviews.each do |review|%></h1>
   <p><%=review.content%></p>
-  <p><%=review.rating%></p>
+  <p><%=review.stars%></p>
 <% end %>
+<br>
+<br>
+<br>
+<%= link_to "Book a stay", new_island_booking_path(@island), class: "btn btn-primary"%>
+<%#= link_to "Add a review", booking_path(@island.booking), class: "btn btn-primary"%>
 <br>
 <br>
 <%= link_to "Go back to islands list", islands_path, class: "btn btn-primary"%>
