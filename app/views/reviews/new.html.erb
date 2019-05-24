@@ -1,7 +1,10 @@
 <h1> Create a new reviews </h1>
 
+
 <%= simple_form_for [@booking, @review] do |f|  %>
   <%= f.input :content  %>
-  <%= f.input :stars  %>
+  <%= f.input :stars, collection: [1,2,3,4,5], include_blank: false  %>
   <%= f.submit "submit", class:'btn btn-primary' %>
 <% end %>
+
+<%= link_to "Go back to your island", island_path(@booking.island_id), class: "btn btn-primary"%>

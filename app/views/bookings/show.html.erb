@@ -5,4 +5,4 @@
 <p>Total duration: <%= ((@booking.end_date - @booking.start_date) / 24 / 3600).ceil %></p>
 <p>Total price paid: <%= @booking.total_price %>€</p>
 
-<%= link_to booking_path(@booking) %>
+<%= link_to "Go back", island_path(@booking.island) %>
