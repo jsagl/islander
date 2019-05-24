@@ -1,19 +1,22 @@
 class IslandsController < ApplicationController
   def index
-    @islands = Island.all
+    @islands = policy_scope(Island).order(created_at: :asc)
   end
 
   def show
     @island = Island.find(params[:id])
+    authorize @island
   end
 
   def new
     @island = Island.new
+    authorize @island
   end
 
   def create
     @island = Island.new(island_params)
     @island.user = current_user
+    authorize @island
     if @island.save
       redirect_to island_path(@island)
     else
@@ -36,6 +39,7 @@ class IslandsController < ApplicationController
 
   def destroy
     @island = Island.find(params[:id])
+    authorize @island
     @island.destroy
     redirect_to islands_path
   end
