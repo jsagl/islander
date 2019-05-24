@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_island, only: [:new, :create, :destroy]
+  before_action :find_island, only: [:new, :create]
   before_action :find_booking, only: [:show, :destroy]
 
   def show
@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to island_path(@island)
+    redirect_to island_path(@booking.island)
   end
 
   private
