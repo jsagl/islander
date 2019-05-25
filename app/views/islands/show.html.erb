@@ -1,31 +1,153 @@
-<div class="container">
+<div class="container total">
   <div class="big-card d-flex">
-
-    <div class="card-trip">
-<!--       <img src="https://www.planetware.com/photos-large/SEY/best-islands-seychelles.jpg"> -->
-      <%= cl_image_tag @island.photo, height: 300, width: 400, crop: :fill %>
+    <!-- CARD TRIP -->
+    <div class="card-trip col-xs-12 col-md-8 col-lg-6">
+      <!-- CAROUSEL -->
+      <!-- <div class="container"> -->
+      <div class="carousel">
+        <input type="radio" id="carousel-1" name="carousel[]" checked>
+        <input type="radio" id="carousel-2" name="carousel[]">
+        <input type="radio" id="carousel-3" name="carousel[]">
+        <input type="radio" id="carousel-4" name="carousel[]">
+        <input type="radio" id="carousel-5" name="carousel[]">
+        <ul class="carousel__items">
+          <li class="carousel__item">      <%= cl_image_tag @island.photo, height: 300, width: 400, crop: :fill %></li>
+          <li class="carousel__item"><img src="//lh4.googleusercontent.com/-ntVHbbWX5eo/U8-EmV8P4cI/AAAAAAAABc4/ICYBGkcztTc/w1358-h905-no/carousel-2.jpg" alt=""></li>
+          <li class="carousel__item"><img src="//lh5.googleusercontent.com/-batEXUZE_e4/U8-EmLF9-hI/AAAAAAAABc0/J3tJVUa6Buk/w1358-h905-no/carousel-3.jpg" alt=""></li>
+          <li class="carousel__item"><img src="//lh5.googleusercontent.com/-gywqIeMvel0/U8-EolKdtkI/AAAAAAAABdM/G0-NHuvvJUU/w1358-h905-no/carousel-4.jpg" alt=""></li>
+          <li class="carousel__item"><img src="//lh5.googleusercontent.com/--2iANjL3ikc/U8-EoGJ18mI/AAAAAAAABdI/fBe-q3Gos6Y/w1358-h905-no/carousel-5.jpg" alt=""></li>
+        </ul>
+        <div class="carousel__prev">
+          <label for="carousel-1"></label>
+          <label for="carousel-2"></label>
+          <label for="carousel-3"></label>
+          <label for="carousel-4"></label>
+          <label for="carousel-5"></label>
+        </div>
+        <div class="carousel__next">
+          <label for="carousel-1"></label>
+          <label for="carousel-2"></label>
+          <label for="carousel-3"></label>
+          <label for="carousel-4"></label>
+          <label for="carousel-5"></label>
+        </div>
+        <div class="carousel__nav">
+          <label for="carousel-1"></label>
+          <label for="carousel-2"></label>
+          <label for="carousel-3"></label>
+          <label for="carousel-4"></label>
+          <label for="carousel-5"></label>
+        </div>
+      </div>
+      <!-- </div> -->
+      <%#= cl_image_tag @island.photo, height: 300, width: 400, crop: :fill %>
       <div class="card-trip-infos">
         <div>
           <h2><%= @island.name %></h2>
           <h3><%= @island.title %></h3>
+          <br>
+          <br>
           <h4>About:</h4>
           <p><%=@island.description%></p>
-          <p style = "text-align:right;"><i class="fas fa-users"></i> <%=@island.number_of_guests%> guests max </p>
+          <br>
+          <br>
+          <div class="recap">
+            <p style = "text-align:right;"><i class="fas fa-users"></i> <%=@island.number_of_guests%> guests max </p>
+
+            <p style = "text-align:right;"><i class="fas fa-globe-americas"></i><%=@island.country%></p>
+
+            <p style = "text-align:right;"><i class="fas fa-money-bill-wave"></i><%=@island.price_per_day%>   € per day</p>
+          </div>
         </div>
 
-        <h2 class="card-trip-pricing">£99.99</h2>
+        <!-- ownerpics -->
         <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
       </div>
     </div>
 
-    <div class="card-info">
-      <h1></h1>
-      <h1></h1>
-      <h1></h1>
-      <h1></h1>
+    <!-- CARD INFO -->
+    <div class="card-info col-xs-12 col-md-4 col-lg-6">
+      <!-- CARD METEO/MAP -->
+      <div>
+        <div class="card-map">
+          <%= cl_image_tag @island.photo, height: 300, width: 400, crop: :fill %>
+        </div>
+      </div>
+      <!-- BOOKING PART  -->
+      <div id="booking" class="section">
+          <div class="section-center">
+            <div class="container">
+              <div class="row">
+                <div class="booking-form">
+                  <form>
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <span class="form-label">Check in</span>
+                            <input class="form-control" type="date" required>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <span class="form-label">Check out</span>
+                            <input class="form-control" type="date" required>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-2">
+                          <div class="form-group">
+                            <span class="form-label">Adults (18+)</span>
+                            <select class="form-control">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                            </select>
+                            <span class="select-arrow"></span>
+                          </div>
+                        </div>
+                        <div class="col-md-2">
+                          <div class="form-group">
+                            <span class="form-label">Children (0-17)</span>
+                            <select class="form-control">
+                              <option>0</option>
+                              <option>1</option>
+                              <option>2</option>
+                            </select>
+                            <span class="select-arrow"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <span class="form-label">Options</span>
+                            <select class="form-control">
+                              <option>Bar</option>
+                              <option>Housekeeping</option>
+                              <option>Entertainment</option>
+                            </select>
+                            <span class="select-arrow"></span>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="form-btn">
+                            <button class="submit-btn">Book my stay</button>
+                          </div>
+                        </div>
+                      </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
   </div>
-  <div class="reviews">
+</div>
+<!-- REVIEWS CARDS -->
+<div class="reviews col-xs-12">
     <h2 class="container">Reviews</h2>
     <br><% @island.reviews.each do |review|%></h1>
       <div>
@@ -42,15 +164,63 @@
         </div>
       </div>
     <% end %>
-  </div>
 </div>
 
 
 
 
-  <h1><%= @island.title %></h1>
-  <h2><%= @island.name %></h2>
-  <h2>About </h2>
+
+@island.lat &  @island.lng
+
+<!-- <select name="paylogic_product_selection[4997896fd71243a2ae0c424cd0f1116b]" id="quantity_field" class="form__select form__simple-select" data-value="8.2" tabindex="4">
+  <option value="0" selected="selected">0</option><option value="1" >1</option>
+  <option value="2" >2</option>
+  <option value="3" >3</option>
+  <option value="4" >4</option>
+  <option value="5" >5</option>
+  <option value="6" >6</option>
+</select>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1><%= @island.title %></h1>
+<h2><%= @island.name %></h2>
+<h2>About </h2>
 <p><%=@island.description%></p>
 <p>Up to <%=@island.number_of_guests%> guests</p>
 <p> Price per day : <%=@island.price_per_day%></p>
