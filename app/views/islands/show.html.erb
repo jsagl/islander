@@ -70,7 +70,19 @@
       <!-- CARD METEO/MAP -->
       <div>
         <div class="card-map">
-          <%= cl_image_tag @island.photo, height: 300, width: 400, crop: :fill %>
+          <script>
+            mapboxgl.accessToken = 'pk.eyJ1IjoibmFyZnN0YWNrc3RhIiwiYSI6ImNqdm5rY2xiNzB2a2E0OWxlYzM2dDNhbHkifQ.xeRMYy1MxfsDRQcddyCNSQ';
+            const map = new mapboxgl.Map({
+              container: 'map',
+              style: 'mapbox://styles/mapbox/satelliter-v9',
+              center: [@island.lng, @island.lat],
+              zoom: 12
+            });
+            new mapboxgl.Marker()
+              .setLngLat([@island.lng, @island.lat])
+              .addTo(map);
+          </script>
+          <%#= cl_image_tag @island.photo, height: 300, width: 400, crop: :fill %>
         </div>
       </div>
       <!-- BOOKING PART  -->
@@ -167,10 +179,6 @@
 </div>
 
 
-
-
-
-@island.lat &  @island.lng
 
 <!-- <select name="paylogic_product_selection[4997896fd71243a2ae0c424cd0f1116b]" id="quantity_field" class="form__select form__simple-select" data-value="8.2" tabindex="4">
   <option value="0" selected="selected">0</option><option value="1" >1</option>
