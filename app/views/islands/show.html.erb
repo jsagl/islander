@@ -34,65 +34,18 @@
       <!-- CARD MAP/METEO -->
       <%= render 'shared/map' %>
       <%= render 'shared/meteo' %>
+      <!-- BOOKING PART  -->
       <%= render 'shared/booking' %>
     </div>
   </div>
 </div>
 <!-- REVIEWS CARDS -->
-<div class="reviews col-xs-12">
-    <h2 class="container">Reviews</h2>
-    <h3><% @island.reviews.each do |review|%></h3>
-      <div>
-        <div class="d-flex">
-          <%= "#{review.booking.user.first_name}" + ". " + "#{review.booking.user.last_name.first}" %>
-          <p><%= review.created_at.strftime("%b %d, %Y") %></p>
-        </div>
-        <div style="margin-top: 16px;">
-          <p class="review"><%=review.content%></p>
-          <p><%=review.stars%></p>
-        </div>
-        <div style="margin-top: 24px; margin-bottom: 24px;">
-          <div class="_7qp4lh"></div>
-        </div>
-      </div>
-    <% end %>
-</div>
+
+<%= render 'shared/reviews' %>
 
 
-
-<!-- <select name="paylogic_product_selection[4997896fd71243a2ae0c424cd0f1116b]" id="quantity_field" class="form__select form__simple-select" data-value="8.2" tabindex="4">
-  <option value="0" selected="selected">0</option><option value="1" >1</option>
-  <option value="2" >2</option>
-  <option value="3" >3</option>
-  <option value="4" >4</option>
-  <option value="5" >5</option>
-  <option value="6" >6</option>
-</select>
- -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- BOOKING PART  -->
+<%= render 'shared/existingbookings' %>
 
 
 
@@ -117,17 +70,7 @@
 <br>
 <%= link_to "Book a stay", new_island_booking_path(@island), class: "btn btn-primary"%>
 <%#= link_to "Add a review", booking_path(@island.booking), class: "btn btn-primary"%>
-<br>
-<br>
-<h1>Existing booking</h1>
-<p><%@island.bookings.each do |booking|%></p>
-  <p>From: <%=booking.start_date%> </p>
-  <p>To: <%=booking.end_date%></p>
-  <p>For: <%=booking.total_price%> $</p>
-  <p><%= link_to "Delete the booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %></p>
-<% end %>
-<br>
-<br>
+
 <%= link_to "Go back to islands list", islands_path, class: "btn btn-primary"%>
 
 

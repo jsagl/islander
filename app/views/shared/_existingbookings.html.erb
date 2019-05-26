@@ -1,0 +1,26 @@
+<div id="wrapper">
+<h1>Your bookings</h1>
+
+<table id="keywords" cellspacing="0" cellpadding="0">
+  <thead>
+    <tr>
+      <th><span>Soul</span></th>
+      <th><span>From</span></th>
+      <th><span>To</span></th>
+      <th><span>Invoice($)</span></th>
+      <th><span>Delete</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%@island.bookings.each do |booking|%>
+      <tr>
+        <td class="lalign"><%=booking.user.first_name %></td>
+        <td><%=booking.start_date.strftime("%b %d, %Y")%></td>
+        <td><%=booking.end_date.strftime("%b %d, %Y")%></td>
+        <td><%=booking.total_price%></td>
+        <td><%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fas fa-trash-restore-alt"></i><% end %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
