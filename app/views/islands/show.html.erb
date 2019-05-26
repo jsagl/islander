@@ -3,44 +3,8 @@
     <!-- CARD TRIP -->
     <div class="card-trip col-xs-12 col-md-8 col-lg-6">
       <!-- CAROUSEL -->
-      <!-- <div class="container"> -->
-      <div class="carousel">
-        <input type="radio" id="carousel-1" name="carousel[]" checked>
-        <input type="radio" id="carousel-2" name="carousel[]">
-        <input type="radio" id="carousel-3" name="carousel[]">
-        <input type="radio" id="carousel-4" name="carousel[]">
-        <input type="radio" id="carousel-5" name="carousel[]">
-        <ul class="carousel__items">
-          <li class="carousel__item">      <%= cl_image_tag @island.photo, height: 300, width: 400, crop: :fill %></li>
-          <li class="carousel__item"><img src="//lh4.googleusercontent.com/-ntVHbbWX5eo/U8-EmV8P4cI/AAAAAAAABc4/ICYBGkcztTc/w1358-h905-no/carousel-2.jpg" alt=""></li>
-          <li class="carousel__item"><img src="//lh5.googleusercontent.com/-batEXUZE_e4/U8-EmLF9-hI/AAAAAAAABc0/J3tJVUa6Buk/w1358-h905-no/carousel-3.jpg" alt=""></li>
-          <li class="carousel__item"><img src="//lh5.googleusercontent.com/-gywqIeMvel0/U8-EolKdtkI/AAAAAAAABdM/G0-NHuvvJUU/w1358-h905-no/carousel-4.jpg" alt=""></li>
-          <li class="carousel__item"><img src="//lh5.googleusercontent.com/--2iANjL3ikc/U8-EoGJ18mI/AAAAAAAABdI/fBe-q3Gos6Y/w1358-h905-no/carousel-5.jpg" alt=""></li>
-        </ul>
-        <div class="carousel__prev">
-          <label for="carousel-1"></label>
-          <label for="carousel-2"></label>
-          <label for="carousel-3"></label>
-          <label for="carousel-4"></label>
-          <label for="carousel-5"></label>
-        </div>
-        <div class="carousel__next">
-          <label for="carousel-1"></label>
-          <label for="carousel-2"></label>
-          <label for="carousel-3"></label>
-          <label for="carousel-4"></label>
-          <label for="carousel-5"></label>
-        </div>
-        <div class="carousel__nav">
-          <label for="carousel-1"></label>
-          <label for="carousel-2"></label>
-          <label for="carousel-3"></label>
-          <label for="carousel-4"></label>
-          <label for="carousel-5"></label>
-        </div>
-      </div>
-      <!-- </div> -->
-      <%#= cl_image_tag @island.photo, height: 300, width: 400, crop: :fill %>
+      <%= render 'shared/carousel' %>
+      <!-- INFO RECAP -->
       <div class="card-trip-infos">
         <div>
           <h2><%= @island.name %></h2>
@@ -67,103 +31,19 @@
 
     <!-- CARD INFO -->
     <div class="card-info col-xs-12 col-md-4 col-lg-6">
-      <!-- CARD METEO/MAP -->
-      <div>
-        <div class="card-map">
-          <script>
-            mapboxgl.accessToken = 'pk.eyJ1IjoibmFyZnN0YWNrc3RhIiwiYSI6ImNqdm5rY2xiNzB2a2E0OWxlYzM2dDNhbHkifQ.xeRMYy1MxfsDRQcddyCNSQ';
-            const map = new mapboxgl.Map({
-              container: 'map',
-              style: 'mapbox://styles/mapbox/satelliter-v9',
-              center: [@island.lng, @island.lat],
-              zoom: 12
-            });
-            new mapboxgl.Marker()
-              .setLngLat([@island.lng, @island.lat])
-              .addTo(map);
-          </script>
-          <%#= cl_image_tag @island.photo, height: 300, width: 400, crop: :fill %>
-        </div>
-      </div>
-      <!-- BOOKING PART  -->
-      <div id="booking" class="section">
-          <div class="section-center">
-            <div class="container">
-              <div class="row">
-                <div class="booking-form">
-                  <form>
-                    <div class="form-group">
-                      <div class="row">
-                        <div class="col-md-3">
-                          <div class="form-group">
-                            <span class="form-label">Check in</span>
-                            <input class="form-control" type="date" required>
-                          </div>
-                        </div>
-                        <div class="col-md-3">
-                          <div class="form-group">
-                            <span class="form-label">Check out</span>
-                            <input class="form-control" type="date" required>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-2">
-                          <div class="form-group">
-                            <span class="form-label">Adults (18+)</span>
-                            <select class="form-control">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                            </select>
-                            <span class="select-arrow"></span>
-                          </div>
-                        </div>
-                        <div class="col-md-2">
-                          <div class="form-group">
-                            <span class="form-label">Children (0-17)</span>
-                            <select class="form-control">
-                              <option>0</option>
-                              <option>1</option>
-                              <option>2</option>
-                            </select>
-                            <span class="select-arrow"></span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-3">
-                          <div class="form-group">
-                            <span class="form-label">Options</span>
-                            <select class="form-control">
-                              <option>Bar</option>
-                              <option>Housekeeping</option>
-                              <option>Entertainment</option>
-                            </select>
-                            <span class="select-arrow"></span>
-                          </div>
-                        </div>
-                        <div class="col-md-3">
-                          <div class="form-btn">
-                            <button class="submit-btn">Book my stay</button>
-                          </div>
-                        </div>
-                      </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
+      <!-- CARD MAP/METEO -->
+      <%= render 'shared/map' %>
+      <%= render 'shared/meteo' %>
+      <%= render 'shared/booking' %>
     </div>
   </div>
 </div>
 <!-- REVIEWS CARDS -->
 <div class="reviews col-xs-12">
     <h2 class="container">Reviews</h2>
-    <br><% @island.reviews.each do |review|%></h1>
+    <h3><% @island.reviews.each do |review|%></h3>
       <div>
-        <div>
+        <div class="d-flex">
           <%= "#{review.booking.user.first_name}" + ". " + "#{review.booking.user.last_name.first}" %>
           <p><%= review.created_at.strftime("%b %d, %Y") %></p>
         </div>
@@ -226,13 +106,6 @@
 
 
 
-<h1><%= @island.title %></h1>
-<h2><%= @island.name %></h2>
-<h2>About </h2>
-<p><%=@island.description%></p>
-<p>Up to <%=@island.number_of_guests%> guests</p>
-<p> Price per day : <%=@island.price_per_day%></p>
-</div>
 <h2>About the owner</h2>
 <h2>Reviews</h2>
 <br><% @island.reviews.each do |review|%></h1>

@@ -6,7 +6,7 @@
 
 @mixin carousel($items, $animation: 'default') {
   .carousel {
-    width: 114vh;
+    width: 98%;
     position: relative;
     overflow: hidden;
     border-radius: 5px;

@@ -1,10 +1,10 @@
 .section {
-  position: relative;
-  height: 100vh;
+  //position: relative;
+  height: 48%;
 }
 
 .section .section-center {
-  position: absolute;
+  //position: absolute;
   top: 50%;
   left: 0;
   right: 0;
@@ -14,9 +14,9 @@
 
 #booking {
   font-family: 'PT Sans', sans-serif;
-  background-image: url('../img/background.jpg');
-  background-size: cover;
-  background-position: center;
+  //background-image: url('../img/background.jpg');
+  //background-size: cover;
+  //background-position: center;
 }
 
 .booking-form {
@@ -27,7 +27,7 @@
 }
 
 .booking-form .form-group {
-  position: relative;
+  //position: relative;
   //margin-bottom: 20px;
 }
 
@@ -73,7 +73,7 @@
 }
 
 .booking-form select.form-control+.select-arrow {
-  position: absolute;
+  //position: absolute;
   right: 10px;
   bottom: 6px;
   width: 32px;
@@ -104,13 +104,13 @@
 }
 
 .booking-form .form-checkbox input {
-  position: absolute !important;
+  //position: absolute !important;
   margin-left: -9999px !important;
   visibility: hidden !important;
 }
 
 .booking-form .form-checkbox label {
-  position: relative;
+  //position: relative;
   padding-top: 4px;
   padding-left: 30px;
   font-weight: 400;
@@ -122,7 +122,7 @@
 }
 
 .booking-form .form-checkbox input+span {
-  position: absolute;
+  //position: absolute;
   left: 2px;
   top: 4px;
   width: 20px;
@@ -133,7 +133,7 @@
 
 .booking-form .form-checkbox input+span:after {
   content: '';
-  position: absolute;
+  //position: absolute;
   top: 50%;
   left: 50%;
   width: 0px;
