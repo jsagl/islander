@@ -1,0 +1,135 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col-lg-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.carde .bg-dark {
+  background: #191f28 !important;
+}
+
+
+.card {
+  border-radius: .55rem;
+  margin-bottom: 30px;
+  transition: .5s;
+  border: 0;
+  position: relative;
+  width: 100%;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.1);
+}
+
+.carde .header {
+  color: #424242;
+  padding: 20px;
+  position: relative;
+  box-shadow: none;
+}
+
+.carde .header h2 {
+  color: #757575;
+  position: relative;
+}
+
+.theme-cyan .carde .header h2 strong {
+  color: #49c5b6;
+}
+
+
+.carde .body {
+  padding: 20px;
+}
+// Nav tabs
+
+.nav-tabs .nav-item {
+  margin-bottom: -1px;
+}
+
+.nav-tabs > .nav-item > .nav-link {
+  color: #888;
+  margin: 0;
+  margin-right: 5px;
+  background-color: rgba(0,0,0,0);
+  border: 1px solid rgba(0,0,0,0);
+  border-radius: 30px;
+  font-size: 14px;
+  padding: 11px 23px;
+  line-height: 1.5;
+}
+
+
+.nav-tabs .nav-item {
+  margin-bottom: -1px;
+}
+
+.theme-cyan .nav-tabs .nav-link.active {
+  border: 1px solid #49c5b6;
+  background: #49c5b6;
+  color: #fff;
+}
+
+
+//  Tab panes
+.m-t-10 {
+  margin-top: 10px;
+}
+
+.tab-content > .active {
+  display: block;
+}
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.m-b-5 {
+  margin-bottom: 5px;
+}
+
+.carde.bg-dark .table td, .carde.bg-dark .table th {
+  border-top: 1px solid #232b38;
+  color: #9e9e9e;
+}
+
+tbody > tr > td > img {
+  max-width: 100%;
+  border-radius: 1px;
+}
+
+.badge {
+  border-radius: 2px;
+}
+
+
+
+
+// Recap total
+
+
+.p-r-0, .card-plain .content, .invoice .nav-tabs {
+  padding-right: 0px;
+}
+
+.m-b-5 {
+  margin-bottom: 5px;
+}
+.small, small {
+  font-size: 80%;
+  font-weight: 400;
+}
+.p-l-0 {
+  padding-left: 0px;
+}
+h6 {
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
