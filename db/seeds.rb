@@ -1,14 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-
-
 puts "Cleaning up database..."
 Island.destroy_all
 User.destroy_all
 
 puts "Creating users..."
 
-jean = User.create!(
+jean = User.new(
   email: "jean.saglio@gmail.com",
   password: "12345678",
   first_name: "Jean",
@@ -16,60 +12,219 @@ jean = User.create!(
   birth_date: "29/02/1988",
   description: "Jean Saglio lead dev of Islander"
   )
+jean.save
 
 
-franz = User.create!(
-  email: "franz@gmail.com",
+frantz = User.new(
+  email: "frantz@gmail.com",
   password: "12345678",
   first_name: "Franz",
   last_name: "Franz",
-  birth_date: "29/02/1988",
+  birth_date: "29/02/1990",
   description: "Franz Franz Chief Happiness Officer at Islander"
-  )
+)
+frantz.save
 
-marie_auxille = User.create!(
+marieauxille = User.new(
   email: "marieauxille@gmail.com",
   password: "12345678",
-  first_name: "marie-Auxille",
+  first_name: "Marie-Auxille",
   last_name: "Denis",
   birth_date: "29/02/2000",
   description: "Porquerolles girl"
   )
+marieauxille.save
+
+basile = User.new(
+  email: "basile.sowka@gmail.com",
+  password: "12345678",
+  first_name: "Basile",
+  last_name: "Sowka",
+  birth_date: "29/02/2001",
+  description: "Porquerolles girl"
+  )
+basile.save
 
 
 
 puts "Creating islands..."
 
-# corse = Island.create!(
-#   name: "Corse",
-#   country: "France",
-#   lat: 42.039604,
-#   lng: 9.012893,
-#   title: "Louez la Corse",
-#   description: "Saucisses et indépendantistes au rdv",
-#   rating: 5.2,
-#   number_of_guests: 4,
-#   price_per_day: 1,
-#   photo: "hrvoje-klaric-1470744-unsplash_cykfzc",
-#   user_id: 1
-# )
 u = User.first
-angleterre = Island.new(
-  name: "Angleterre",
-  country: "United Kingdom",
-  lat: 51.509865,
-  lng: -0.118092,
-  title: "Tirez en premier messieurs les Anglais",
-  description: "Temps de merde et beaucoup d'Anglais. Excellente équipe de rugby",
-  rating: 0.2,
+v = User.last
+
+
+porquerolles = Island.new(
+  name: "Porquerolles",
+  country: "France",
+  title: "the Nantucket of the Mediterranean",
+  description: "It is a magical place with many faces. Its paradisiacal beaches, its picturesque village, its splendid landscapes, its vineyards... Porquerolles has everything to please you! To the south, a steep coast made of abrupt cliffs and where some creeks are hidden. While in the north, the landscape is like the Caribbean with its fine sandy beaches and turquoise waters. Porquerolles is a paradise on earth for those who love dream beaches.",
   number_of_guests: 11,
   price_per_day: 999,
-  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558704355/john-westrock-706905-unsplash_pr7vc7.jpg",
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558950173/porquerolles/Porquerolles-3_bjk2e1.jpg",
   user_id: u.id
 )
-angleterre.save
+porquerolles.save
+
+
+patmos = Island.new(
+  name: "Patmos",
+  country: "Greece",
+  title: "a Perfectly Lovely Place to Hole Up During End Times",
+  description: "With its jet-set parties, picturesque beaches, and mountaintop mansions, it offers the sorts of Aegean delights beloved by sybarites and society folk — but in this place where the Book of Revelation was written, hedonism can take a slightly apocalyptic cast",
+  number_of_guests: 11,
+  price_per_day: 150,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558951295/patmos_yeaxeq.jpg",
+  user_id: u.id
+)
+patmos.save
+
+
+guernesey = Island.new(
+  name: "Guernesey",
+  title: "Guernesey, the green island",
+  description: "Just an hour away from Diélette or Carteret, discover Guernsey, Jersey's little sister.Here nature is queen and the sea generous.Afar from the daily hustle and bustle, Guernsey promises a stay out of time.English gardens, ramparts ... Many landscapes of irresistible beauty await you, you will also find castles, manor houses, museums ... and the famous Hauteville House house where Victor Hugo lived during his exile.",
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558951542/guernesey_cps4nb.jpg",
+  price_per_day: 150,
+  user_id: v.id,
+  number_of_guests: 10
+  )
+guernesey.save
+
+antartica = Island.new(
+  name: "Antartica",
+  country: "Antarctica",
+  title: "A stunningly beautiful place blessed with landscapes and seascapes unlike others you may have seen",
+  description: "No place on Earth compares to this vast white wilderness of elemental forces: snow, ice, water, rock. Antarctica is simply stunning",
+  number_of_guests: 150,
+  price_per_day: 13,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558951794/antartica_ybevp3.jpg",
+  user_id: u.id
+)
+antartica.save
+
+vis = Island.new(
+  name: "Vis",
+  country: "Croatia",
+  title: "The idyllic filming location of the hit movie 'Mamma Mia: Here We Go Again'",
+  description: "Whether you like your beaches sandy or pebbly, remote or close to town, Vis has the perfect beach for you. Stiniva is the most famous: it's encircled by cliffs, with a small passage to the sea. It is regularly voted the most beautiful beach in Europe.",
+  number_of_guests: 15,
+  price_per_day: 3,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558952428/vis_iyp3xh.jpg",
+  user_id: u.id
+)
+vis.save
+
+iff = Island.new(
+  name: "Chateau d'if",
+  country: "France",
+  title: "The famous island fort facing Marseille immortalised by Alexander Dumas",
+  description: "The Castle of If has been perfectly preserved and is one of the most impressive historical sites on the Mediterranean coastline",
+  number_of_guests: 25,
+  price_per_day: 130,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558952735/if_ecsikz.jpg",
+  user_id: u.id
+  )
+iff.save
+
+
+terceira = Island.new(
+  name: "Terceira",
+  country: "Portugal",
+  title: "Beautiful island in the Azores archipelago",
+  description: "With sandy beaches, dozens of stunning viewpoints, and even the ability to explore inside an extinct volcano",
+  number_of_guests: 20,
+  price_per_day: 100,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558953687/terceira_jpzmqv.jpg",
+  user_id: v.id
+  )
+terceira.save
+
+
+palawan = Island.new(
+  name: "Palawan Island",
+  country: "Philippines",
+  title: "Stunning archipelago ranked as the most beautiful island in the world",
+  description: "Visit the Balsahan or Tagbarung Swimming Resort, Kalis Point, or better yet, get a taste of El Nido. El Nido features black marble caves, tabletop corals, fantastic marine life, and the requisite white sand beach. Named after the swallow's nest which proliferates in its mountain caves, El Nido also features one of the most delicious samplings of the freshest seafood in the land.",
+  number_of_guests: 50,
+  price_per_day: 100,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558954043/Palawan-islands_dxppoz.jpg",
+  user_id: v.id
+  )
+palawan.save
+
+capri = Island.new(
+  name: "Capri",
+  country: "Italy",
+  title: "where endless waters and thermal springs meet Italian fashion and glittering nightlife",
+  description: " A vivacious combination of laid-back modern glamour and ancient beauty. Tell us you want the best spot for a romantic dinner under a canopy of lemon groves and we’ll send you to one of Capri’s most exclusive restaurants",
+  number_of_guests: 50,
+  price_per_day: 100,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558954487/Capri-island_ag2opp.jpg",
+  user_id: v.id
+  )
+capri.save
+
+maldives = Island.new(
+  name: "Maldives",
+  country: "Maldives",
+  title: "Tropical paradise",
+  description: "The islands offer its visitors pure white sand beaches, turquoise waters, and an amazing marine life experience.",
+  number_of_guests: 67,
+  price_per_day: 100,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558954741/Maldives-islands_g05xgo.jpg",
+  user_id: v.id
+  )
+maldives.save
+
+seychelles = Island.new(
+  name: "Seychelles",
+  country: "Seychelles",
+  title: "The most beautiful islands on Earth",
+  description:  "In addition to immaculate white sands and welcoming waters, this spectacular country is also home to a vibrant diversity of cultures",
+  number_of_guests: 67,
+  price_per_day: 100,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558954748/Seychelles-islands_jrrn44.jpg",
+  user_id: v.id
+  )
+seychelles.save
+
+polynesia = Island.new(
+  name: "French Polynesia",
+  country: "France",
+  title: "The most stunning islands on earth",
+  description:  "Few to no other place in the world has a more exotic feel to its name than what French Polynesia has.",
+  number_of_guests: 67,
+  price_per_day: 100,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558954745/French-Polynesia_fdzzva.jpg",
+  user_id: v.id
+  )
+polynesia.save
+
+
+kauai = Island.new(
+  name:"Kauai",
+  country:"Hawai",
+  title: "The Garden Isle",
+  description: "Breathtaking island characterized by its wealth of lush, rich lands, including vast tropical rainforests, jaw-dropping mountains and stunning beaches",
+  number_of_guests: 98,
+  price_per_day: 190,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558956895/kauai_jhq6xf.jpg",
+  user_id: v.id
+  )
+kauai.save
+
+jamaica = Island.new(
+  name:"Jamaica",
+  country:"Jamaica",
+  title: "Wonderful and always sunny",
+  description: "Let the reggae and dancehall music set the tone for your stay as you fill your itinerary will everything from caving and swimming with dolphins to checking out the museums and finding the best jerk chicken on the island. Unfortunately, way too many people stay cooped up in their resorts and don’t get to experience the authentic Jamaican hot spots.",
+  number_of_guests: 90,
+  price_per_day: 100,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558958293/jamaica_kgaiz1.jpg",
+  user_id: v.id
+  )
+jamaica.save
+
+
 
 puts "Seeding completed!"
-
-
-
