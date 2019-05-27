@@ -444,10 +444,76 @@ baffin = Island.new(
   number_of_guests: 78,
   price_per_day: 87,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558982528/baffin_w6obfs.webp",
-  user_id: u.id,
+  user_id: v.id,
   address:"Baffin Islands, China"
   )
 baffin.save
+
+kos = Island.new(
+  name: "Kos",
+  country:"Greece",
+  title:"Holidays in the Aegean sea",
+  description: "Golden sand beaches, crystal clear waters, archaeological sites and activities for the whole family...",
+  number_of_guests: 7,
+  price_per_day: 89,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558991399/kos_evhf3l.jpg",
+  user_id: v.id,
+  address:"Kos, Greece"
+  )
+kos.save
+
+alcatraz = Island.new(
+  name: "Alcatraz",
+  country:"USA",
+  title:"On the steps of Al Capone",
+  description: "Spend holidays at the Rock !",
+  number_of_guests: 10,
+  price_per_day: 3,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558992991/alcatraz_txwcks.jpg",
+  user_id: v.id,
+  address:"San Francisco, USA"
+  )
+alcatraz.save
+
+cook = Island.new(
+  name: "Cook Islands",
+  country:"Greece",
+  title:"Best kept secret in the Pacific Ocean",
+  description: "Enticing aquamarine lagoons, palm-fringed beaches, and volcanic peaks. Best of all, the locals are among the friendliest in the South Pacific.",
+  number_of_guests:18,
+  price_per_day: 79,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558991924/cook_u3oew1.jpg",
+  user_id: v.id,
+  address:"Cook Islands, New Zealand"
+  )
+cook.save
+
+bali = Island.new(
+  name: "Bali",
+  country:"Indonesia",
+  title:"Soak up the spiritual side of Bali",
+  description: "Incense wafts from Hindu temples, rice paddies glow in electric greens, and the food jolts the taste buds... Surfing, swimming, shopping, and sunbathing are the prime pursuits on this exotic isle, as well as sightseeing in the lush countryside",
+  number_of_guests: 200,
+  price_per_day: 87,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558991869/bali_n9o5le.jpg",
+  user_id: v.id,
+  address:"Bali"
+  )
+bali.save
+
+
+ellis = Island.new(
+  name: "Ellis Island",
+  country:"USA",
+  title:"Close to the Big Apple",
+  description: "Give me your tired, your poor, your huddled masses yearning to breathe free, the wretched refuse of your teeming shore, send these, the homeless, tempest-tossed to me, I lift my lamp beside the golden door!",
+  number_of_guests: 200,
+  price_per_day: 87,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558993018/ellisisland_ffn3l8.jpg",
+  user_id: v.id,
+  address:"Ellis Island"
+  )
+ellis.save
 
 
 
