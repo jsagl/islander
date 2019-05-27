@@ -94,6 +94,7 @@ class Island < ApplicationRecord
   "Guinea-Bissau",
   "Guyana",
   "Haiti",
+  "Hawai",
   "Heard and McDonald Islands",
   "Holy See (Vatican City State)",
   "Honduras",
@@ -261,4 +262,6 @@ class Island < ApplicationRecord
   validates :rating, allow_nil: true, numericality: true
   validates :price_per_day, presence: true, numericality: { only_integer: true, greater_than: 0 }
   validates :number_of_guests, presence: true, numericality: { only_integer: true, greater_than: 0 }
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

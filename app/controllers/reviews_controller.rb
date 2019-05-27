@@ -9,8 +9,15 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.booking = @booking
+    @island = @booking.island
+    num_of_reviews = 0
+    @island.bookings.each do |booking|
+      num_of_reviews += 1 if !booking.review.nil?
+    end
+    @island.rating = 0 if @island.rating.nil?
+    @island.rating = (@island.rating + @review.stars) / (num_of_reviews + 1)
     authorize @review
-    if @review.save
+    if @review.save && @island.save
       redirect_to root_path
     else
       render :new

@@ -1,10 +1,17 @@
 class IslandsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @islands = policy_scope(Island).order(created_at: :asc)
   end
 
   def show
     @island = Island.find(params[:id])
+    @marker = {
+      lat: @island.latitude,
+      lng: @island.longitude,
+      infoWindow: render_to_string(partial: "infowindow", locals: { island: @island })
+    }
     authorize @island
   end
 

@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_23_133737) do
+ActiveRecord::Schema.define(version: 2019_05_27_112124) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.date "start_date"
+    t.date "end_date"
     t.integer "total_price"
     t.bigint "island_id"
     t.bigint "user_id"
@@ -30,8 +31,8 @@ ActiveRecord::Schema.define(version: 2019_05_23_133737) do
   create_table "islands", force: :cascade do |t|
     t.string "name"
     t.string "country"
-    t.decimal "lat"
-    t.decimal "lng"
+    t.float "latitude"
+    t.float "longitude"
     t.string "title"
     t.text "description"
     t.float "rating"
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(version: 2019_05_23_133737) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+    t.string "address"
     t.index ["user_id"], name: "index_islands_on_user_id"
   end
 
@@ -65,6 +67,7 @@ ActiveRecord::Schema.define(version: 2019_05_23_133737) do
     t.string "last_name"
     t.datetime "birth_date"
     t.text "description"
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
