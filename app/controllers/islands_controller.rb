@@ -7,6 +7,11 @@ class IslandsController < ApplicationController
 
   def show
     @island = Island.find(params[:id])
+    @marker = {
+      lat: @island.latitude,
+      lng: @island.longitude,
+      infoWindow: render_to_string(partial: "infowindow", locals: { island: @island })
+    }
     authorize @island
   end
 
