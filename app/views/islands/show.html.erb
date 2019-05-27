@@ -1,82 +1,56 @@
-<div class="container">
+<div class="container total">
   <div class="big-card d-flex">
-
-    <div class="card-trip">
-<!--       <img src="https://www.planetware.com/photos-large/SEY/best-islands-seychelles.jpg"> -->
-      <%= cl_image_tag @island.photo, height: 300, width: 400, crop: :fill %>
+    <!-- CARD TRIP -->
+    <div class="card-trip col-xs-12 col-md-8 col-lg-6">
+      <!-- CAROUSEL -->
+      <%= render 'shared/carousel' %>
+      <!-- INFO RECAP -->
       <div class="card-trip-infos">
         <div>
           <h2><%= @island.name %></h2>
           <h3><%= @island.title %></h3>
+          <br>
+          <br>
           <h4>About:</h4>
           <p><%=@island.description%></p>
-          <p style = "text-align:right;"><i class="fas fa-users"></i> <%=@island.number_of_guests%> guests max </p>
+          <br>
+          <br>
+          <div class="recap">
+            <p style = "text-align:right;"><i class="fas fa-users"></i> <%=@island.number_of_guests%> guests max </p>
+
+            <p style = "text-align:right;"><i class="fas fa-globe-americas"></i><%=@island.country%></p>
+
+            <p style = "text-align:right;"><i class="fas fa-money-bill-wave"></i><%=@island.price_per_day%>   € per day</p>
+          </div>
         </div>
 
-        <h2 class="card-trip-pricing">£99.99</h2>
+        <!-- ownerpics -->
         <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
       </div>
     </div>
 
-    <div class="card-info">
-      <h1></h1>
-      <h1></h1>
-      <h1></h1>
-      <h1></h1>
+    <!-- CARD INFO -->
+    <div class="card-info col-xs-12 col-md-4 col-lg-6">
+      <!-- CARD MAP/METEO -->
+      <%= render 'shared/map' %>
+      <%= render 'shared/meteo' %>
+      <!-- BOOKING PART  -->
+      <%= render 'shared/booking' %>
     </div>
   </div>
-  <div class="reviews">
-    <h2 class="container">Reviews</h2>
-    <br><% @island.reviews.each do |review|%></h1>
-      <div>
-        <div>
-          <%= "#{review.booking.user.first_name}" + ". " + "#{review.booking.user.last_name.first}" %>
-          <p><%= review.created_at.strftime("%b %d, %Y") %></p>
-        </div>
-        <div style="margin-top: 16px;">
-          <p class="review"><%=review.content%></p>
-          <p><%=review.stars%></p>
-        </div>
-        <div style="margin-top: 24px; margin-bottom: 24px;">
-          <div class="_7qp4lh"></div>
-        </div>
-      </div>
-    <% end %>
-  </div>
 </div>
+<!-- REVIEWS CARDS -->
+
+<%= render 'shared/reviews' %>
 
 
+<!-- BOOKING PART  -->
+<%= render 'shared/existingbookings' %>
 
 
-  <h1><%= @island.title %></h1>
-  <h2><%= @island.name %></h2>
-  <h2>About </h2>
-<p><%=@island.description%></p>
-<p>Up to <%=@island.number_of_guests%> guests</p>
-<p> Price per day : <%=@island.price_per_day%></p>
-</div>
-<h2>About the owner</h2>
-<h2>Reviews</h2>
-<br><% @island.reviews.each do |review|%></h1>
-  <p><%=review.content%></p>
-  <p><%=review.stars%></p>
-<% end %>
-<br>
-<br>
-<br>
 <%= link_to "Book a stay", new_island_booking_path(@island), class: "btn btn-primary"%>
 <%#= link_to "Add a review", booking_path(@island.booking), class: "btn btn-primary"%>
-<br>
-<br>
-<h1>Existing booking</h1>
-<p><%@island.bookings.each do |booking|%></p>
-  <p>From: <%=booking.start_date%> </p>
-  <p>To: <%=booking.end_date%></p>
-  <p>For: <%=booking.total_price%> $</p>
-  <p><%= link_to "Delete the booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %></p>
-<% end %>
-<br>
-<br>
+
 <%= link_to "Go back to islands list", islands_path, class: "btn btn-primary"%>
 
 
