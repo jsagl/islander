@@ -1,7 +1,7 @@
 <h4>The bookings on my islands</h4>
 <ul>
   <% @my_islands.each do |island| %>
-    <li><%= island.name %> - Rating: <%= island.rating %><%= link_to "Delete", island_path(island), method: :delete, data: { confirm: "Are you sure?" }%>
+    <li><%= link_to island.name, island_path(island) %> - Rating: <%= island.rating %><%= link_to "Delete", island_path(island), method: :delete, data: { confirm: "Are you sure?" }%>
       <% if island.bookings != [] %>
         <div id="wrapper">
         <table id="keywords" cellspacing="0" cellpadding="0">
