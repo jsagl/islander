@@ -57,11 +57,10 @@ u = User.first
 angleterre = Island.new(
   name: "Angleterre",
   country: "United Kingdom",
-  lat: 51.509865,
-  lng: -0.118092,
+  latitude: 51.509865,
+  longitude: -0.118092,
   title: "Tirez en premier messieurs les Anglais",
   description: "Temps de merde et beaucoup d'Anglais. Excellente équipe de rugby",
-  rating: 0.2,
   number_of_guests: 11,
   price_per_day: 999,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558704355/john-westrock-706905-unsplash_pr7vc7.jpg",

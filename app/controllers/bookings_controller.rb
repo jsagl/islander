@@ -3,6 +3,12 @@ class BookingsController < ApplicationController
   before_action :find_booking, only: [:show, :destroy]
   skip_before_action :authenticate_user!, only: [:show]
 
+  def dashboard
+    @my_bookings = Booking.where(user_id: current_user[:id])
+    @my_islands = Island.where(user_id: current_user[:id])
+    authorize :booking, :dashboard?
+  end
+
   def show
     authorize @booking
   end
@@ -16,7 +22,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.island = @island
     @booking.user = current_user
-    @booking.total_price = ((@booking.end_date - @booking.start_date) / 24 / 3600).ceil * @island.price_per_day
+    @booking.total_price = (@booking.end_date - @booking.start_date).to_i * @island.price_per_day
     authorize @booking
     if @booking.save
       redirect_to booking_path(@booking)
