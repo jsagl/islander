@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
     @island.rating = (@island.rating + @review.stars) / (num_of_reviews + 1)
     authorize @review
     if @review.save && @island.save
-      redirect_to root_path
+      redirect_to dashboard_path
     else
       render :new
     end
