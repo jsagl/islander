@@ -1,8 +1,8 @@
 <div class="weather">
   <script>
-    var long = document.getElementById("long").innerText;
-    var lat = document.getElementById("lat").innerText;
-    fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=6ca4f6a194ba6dcaaea2d9ee4f6fe1bd`)
+  const mapElement = document.getElementById('map');
+  const marker = JSON.parse(mapElement.dataset.marker);
+    fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${marker.lat}&lon=${marker.lng}&appid=6ca4f6a194ba6dcaaea2d9ee4f6fe1bd`)
       .then(response => response.json())
       .then((dataa) => {
         const towni = dataa.name;

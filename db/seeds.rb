@@ -1,7 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-
-
 puts "Cleaning up database..."
 Island.destroy_all
 User.destroy_all
@@ -69,8 +65,9 @@ porquerolles = Island.new(
   number_of_guests: 11,
   price_per_day: 999,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558950173/porquerolles/Porquerolles-3_bjk2e1.jpg",
-  user_id: u.id
-  )
+  user_id: u.id,
+  address: "Porquerolles, France"
+)
 porquerolles.save
 
 
@@ -82,31 +79,35 @@ patmos = Island.new(
   number_of_guests: 11,
   price_per_day: 150,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558951295/patmos_yeaxeq.jpg",
-  user_id: u.id
+  user_id: u.id,
+  address: "Patmos, Greece"
 )
 patmos.save
 
 
 guernesey = Island.new(
   name: "Guernesey",
+  country: "United Kingdom",
   title: "Guernesey, the green island",
   description: "Just an hour away from Diélette or Carteret, discover Guernsey, Jersey's little sister.Here nature is queen and the sea generous.Afar from the daily hustle and bustle, Guernsey promises a stay out of time.English gardens, ramparts ... Many landscapes of irresistible beauty await you, you will also find castles, manor houses, museums ... and the famous Hauteville House house where Victor Hugo lived during his exile.",
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558951542/guernesey_cps4nb.jpg",
   price_per_day: 150,
   user_id: v.id,
-  number_of_guests: 10
+  number_of_guests: 10,
+  address: "Guernesey, United Kingdom"
   )
 guernesey.save
 
 antartica = Island.new(
-  name: "Antartica",
+  name: "Antipods Island",
   country: "Antarctica",
   title: "A stunningly beautiful place with landscapes and seascapes unlike any others",
   description: "No place on Earth compares to this vast white wilderness of elemental forces: snow, ice, water, rock. Antarctica is simply stunning",
   number_of_guests: 150,
   price_per_day: 13,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558951794/antartica_ybevp3.jpg",
-  user_id: u.id
+  user_id: u.id,
+  address: "Antipods Island, Antarctica"
 )
 antartica.save
 
@@ -118,7 +119,8 @@ vis = Island.new(
   number_of_guests: 15,
   price_per_day: 3,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558952428/vis_iyp3xh.jpg",
-  user_id: u.id
+  user_id: u.id,
+  address: "Vis,Croatia "
 )
 vis.save
 
@@ -130,7 +132,8 @@ iff = Island.new(
   number_of_guests: 25,
   price_per_day: 130,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558952735/if_ecsikz.jpg",
-  user_id: u.id
+  user_id: u.id,
+  address: "Chateau d'if, France"
   )
 iff.save
 
@@ -143,7 +146,8 @@ terceira = Island.new(
   number_of_guests: 20,
   price_per_day: 100,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558953687/terceira_jpzmqv.jpg",
-  user_id: v.id
+  user_id: v.id,
+  address: "Terceira, Portugal"
   )
 terceira.save
 
@@ -156,7 +160,8 @@ palawan = Island.new(
   number_of_guests: 50,
   price_per_day: 100,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558954043/Palawan-islands_dxppoz.jpg",
-  user_id: v.id
+  user_id: v.id,
+  address: "Palawan Island, Philippines"
   )
 palawan.save
 
@@ -168,7 +173,8 @@ capri = Island.new(
   number_of_guests: 50,
   price_per_day: 100,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558954487/Capri-island_ag2opp.jpg",
-  user_id: v.id
+  user_id: v.id,
+  address: "Capri, Italy"
   )
 capri.save
 
@@ -180,7 +186,8 @@ maldives = Island.new(
   number_of_guests: 67,
   price_per_day: 100,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558954741/Maldives-islands_g05xgo.jpg",
-  user_id: v.id
+  user_id: v.id,
+  address: "Maldives"
   )
 maldives.save
 
@@ -192,7 +199,8 @@ seychelles = Island.new(
   number_of_guests: 67,
   price_per_day: 100,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558954748/Seychelles-islands_jrrn44.jpg",
-  user_id: v.id
+  user_id: v.id,
+  address: "Seychelles"
   )
 seychelles.save
 
@@ -204,7 +212,8 @@ polynesia = Island.new(
   number_of_guests: 67,
   price_per_day: 100,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558954745/French-Polynesia_fdzzva.jpg",
-  user_id: v.id
+  user_id: v.id,
+  address: "French Polynesia"
   )
 polynesia.save
 
@@ -217,7 +226,9 @@ kauai = Island.new(
   number_of_guests: 98,
   price_per_day: 190,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558956895/kauai_jhq6xf.jpg",
-  user_id: v.id
+  user_id: v.id,
+  address: "Kauai, Hawai"
+
   )
 kauai.save
 
@@ -229,7 +240,8 @@ jamaica = Island.new(
   number_of_guests: 90,
   price_per_day: 100,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558958293/jamaica_kgaiz1.jpg",
-  user_id: v.id
+  user_id: v.id,
+  address: "Jamaica"
   )
 jamaica.save
 
@@ -242,13 +254,11 @@ sicily = Island.new(
   number_of_guests: 150,
   price_per_day: 13,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558959085/sicily_ng8bnf.jpg",
-  user_id: u.id
+  user_id: u.id,
+  address: "Sicily, Italy"
 )
 sicily.save
 
 
 
 puts "Seeding completed!"
-
-
-

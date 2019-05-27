@@ -246,7 +246,7 @@ class Island < ApplicationRecord
   "Yemen",
   "Zambia",
   "Zimbabwe"
-]
+  ]
 
   belongs_to :user
   has_many :bookings, dependent: :destroy
@@ -255,8 +255,7 @@ class Island < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   validates :name, presence: true
-  validates :country, presence: true, inclusion: { in: COUNTRIES,
-    message: "It is not a valid country" }
+  validates :country, presence: true, inclusion: { in: COUNTRIES, message: "It is not a valid country" }
   validates :title, presence: true, length: { minimum: 10, maximum: 150 }
   validates :description, presence: true
   validates :rating, allow_nil: true, numericality: true

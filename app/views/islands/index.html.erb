@@ -19,7 +19,7 @@
   <div class="home-island-cards">
     <% @islands.each do |island| %>
       <div class="home-island-card">
-        <%= cl_image_path island.photo, height: 300, crop: :fill %>
+        <%= cl_image_tag island.photo, height: 300, crop: :fill %>
         <div class="home-island-card-content">
           <h5><%= island.title %></h4>
           <p><%= island.name %></p>
@@ -27,8 +27,6 @@
         </div>
         <div class="home-island-card-actions">
           <%= link_to "Know more about this island", island_path(island)%>
-          <br>
-          <%= link_to "Book now", new_island_booking_path(island)%>
         </div>
       </div>
     <% end %>

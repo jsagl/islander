@@ -5,13 +5,15 @@ import mapboxgl from 'mapbox-gl';
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
+  const marker = JSON.parse(mapElement.dataset.marker);
   if (mapElement) { // only build a map if there's a div#map to inject into
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/mapbox/streets-v10',
+      center: [marker.lng, marker.lat],
+      zoom: 5
     });
-    const marker = JSON.parse(mapElement.dataset.marker);
     new mapboxgl.Marker()
       .setLngLat([ marker.lng, marker.lat])
       .addTo(map);
@@ -31,8 +33,7 @@ const addMarkerToMap = (map, marker) => {
 // const map = new mapboxgl.Map({
 //   container: 'map',
 //   style: 'mapbox://styles/mapbox/streets-v11',
-//   center: [long, lat],
-//   zoom: 4
+
 // });
 // new mapboxgl.Marker()
 //   .setLngLat([ long, lat ])
