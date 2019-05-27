@@ -94,6 +94,7 @@ class Island < ApplicationRecord
   "Guinea-Bissau",
   "Guyana",
   "Haiti",
+  "Hawai",
   "Heard and McDonald Islands",
   "Holy See (Vatican City State)",
   "Honduras",
