@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   before_action :find_island, only: [:new, :create]
   before_action :find_booking, only: [:show, :destroy]
+  skip_before_action :authenticate_user!, only: [:show]
 
   def show
     authorize @booking
