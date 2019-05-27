@@ -314,8 +314,8 @@ galapagos = Island.new(
 galapagos.save
 
 
-macquairie = Island.new(
-  name: "Macquairie Islands",
+macquarie = Island.new(
+  name: "Macquarie Islands",
   country:"New Zealand",
   title:"The island of penguins",
   description: "Has been declared a World Heritage Site by UNESCOowing to its extraordinary wildlife. While there are typically no more than 40 people living there at any time, the island supports about 3.5 million breeding seabirds, including nearly a million penguins.",
@@ -323,7 +323,7 @@ macquairie = Island.new(
   price_per_day: 36,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558979613/macquairie_n5tsio.jpg",
   user_id: u.id,
-  address:"Macquairie Islands, New Zealand"
+  address:"Macquarie Islands, New Zealand"
   )
 macquairie.save
 
@@ -445,7 +445,7 @@ baffin = Island.new(
   price_per_day: 87,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558982528/baffin_w6obfs.webp",
   user_id: v.id,
-  address:"Baffin Islands, China"
+  address:"Baffin Island, Nunavut, China"
   )
 baffin.save
 
@@ -497,7 +497,7 @@ bali = Island.new(
   price_per_day: 87,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558991869/bali_n9o5le.jpg",
   user_id: v.id,
-  address:"Bali"
+  address:"Bali, Indonesia"
   )
 bali.save
 
