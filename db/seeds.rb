@@ -34,7 +34,7 @@ marieauxille = User.new(
   last_name: "Denis",
   birth_date: "29/02/2000",
   description: "Porquerolles girl",
-  remote_photo_url:"https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558955544/self_kbajgt.jpg"
+  remote_photo_url:"https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558966685/Photo_du_11-12-2017_a%CC%80_12.12_2_qod5p6.jpg"
   )
 marieauxille.save
 
@@ -60,7 +60,7 @@ v = User.last
 porquerolles = Island.new(
   name: "Porquerolles",
   country: "France",
-  title: "the Nantucket of the Mediterranean",
+  title: "The Nantucket of the Mediterranean",
   description: "It is a magical place with many faces. Its paradisiacal beaches, its picturesque village, its splendid landscapes, its vineyards... Porquerolles has everything to please you! To the south, a steep coast made of abrupt cliffs and where some creeks are hidden. While in the north, the landscape is like the Caribbean with its fine sandy beaches and turquoise waters. Porquerolles is a paradise on earth for those who love dream beaches.",
   number_of_guests: 11,
   price_per_day: 999,
@@ -258,6 +258,196 @@ sicily = Island.new(
   address: "Sicily, Italy"
 )
 sicily.save
+
+
+ushaia = Island.new(
+  name: "Ushaia",
+  country: "Argentina",
+  title: "A little stay at the end of the world",
+  description: "Separated from the mainland by the Strait of Magellan, Ushuaia is commonly known as the 'End of the World'. Considered the southernmost city on the planet, it's perched on a steep hill that overlooks the Beagle Channel, famously populated by penguins and sea lions. Not cold enough? Hop on the boat to Antarctica",
+  number_of_guests: 1,
+  price_per_day: 13,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558975692/ushuaia_nizyej.jpg",
+  user_id: u.id,
+  address: "Ushaia, Argentina"
+)
+ushaia.save
+
+islay = Island.new(
+  name: "Islay",
+  country: "Scotland",
+  title: "Have a sip of Lagavulin",
+  description: " A peaty malt from the likes of Lagavulin or Laphroaig should take the bite out of the air.",
+  number_of_guests: 34,
+  price_per_day: 160,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558975914/islay_pxszje.jpg",
+  user_id: u.id,
+  address: "Islay, Scotland"
+)
+islay.save
+
+
+iceland = Island.new(
+  name: "Iceland",
+  country: "Iceland",
+  title: "Wonderful place",
+  description: "Think of Iceland and there are several familiar associations: hip Reykjavík, the beautiful therapeutic Blue Lagoon, or perhaps our musical exports Björk or Sigur Rós. But this land of boiling mud pools, spurting geysers, glaciers and waterfalls is also an adventure playground.",
+  number_of_guests: 34,
+  price_per_day: 160,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558976240/iceland_jbrg0a.jpg",
+  user_id: u.id,
+  address: "Iceland"
+)
+iceland.save
+
+galapagos = Island.new(
+  name: "Galapagos",
+  country: "Republic of Ecuador",
+  title: "The Enchanted Archipelago ",
+  description: "The Galapagos Islands offers everyone the possibility to enjoy a great variety of activities for all ages, interests, and fitness, ranging from the contemplative to the adventurous, and knowing that in everything you do you will experience the best of the wildlife and nature.",
+  number_of_guests: 14,
+  price_per_day: 70,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558979468/galapagos_hj3l2a.jpg",
+  user_id: u.id,
+  address: "Galapagos, Ecuador"
+  )
+galapagos.save
+
+
+macquairie = Island.new(
+  name: "Macquairie Islands",
+  country:"New Zealand",
+  title:"The island of penguins",
+  description: "Has been declared a World Heritage Site by UNESCOowing to its extraordinary wildlife. While there are typically no more than 40 people living there at any time, the island supports about 3.5 million breeding seabirds, including nearly a million penguins.",
+  number_of_guests: 12,
+  price_per_day: 36,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558979613/macquairie_n5tsio.jpg",
+  user_id: u.id,
+  address:"Macquairie Islands, New Zealand"
+  )
+macquairie.save
+
+
+brehat = Island.new(
+  name: "Brehat island",
+  country:"France",
+  title:"The flower island ",
+  description: "Off the coast of Paimpol is Ile Bréhat, one of Brittany’s loveliest islands",
+  number_of_guests: 12,
+  price_per_day: 36,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558979861/brehat_qsksen.jpg",
+  user_id: u.id,
+  address:"Brehat, France"
+  )
+brehat.save
+
+
+aix = Island.new(
+  name: "Aix Island",
+  country:"France",
+  title:"Pearl of the estuary of the Charente",
+  description: "Aix Island deserves a stop for a day, the time of a weekend to relax and even longer for people looking to return to the bare essentials. This small crescent of land of 129 hectares is located near the coasts of Charente-Maritime. It offers a 360° panorama with an impressive view on Fort Boyard, to the west with in the background the Ile d'Oléron and the Ile de Ré is to the north, and Madame Island to the south.",
+  number_of_guests: 120,
+  price_per_day: 78,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558980321/aix_p7rie6.jpg",
+  user_id: u.id,
+  address:"Ile d'Aix, France"
+  )
+aix.save
+
+groix = Island.new(
+  name: "Groix Island",
+  country:"France",
+  title:"A miracle of nature",
+  description: "The island of Groix (L’ile de Groix) is a real miracle of nature that you can access only by ferry from Lorient. This is a small island with mild micro-climate and a beautiful coastal path that goes all around the island. Here, you can find the spectacular high cliffs, beaches with wonderful fine sand and many small coves. The island of Groix also has a lot of secret and charming places, such as a convex shape beach, the most unusual one in Europe, accessible by a small path and sheltered by a high cliff",
+  number_of_guests: 145,
+  price_per_day: 76,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558980624/groix_d1b567.jpg",
+  user_id: u.id,
+  address:"Groix, France"
+  )
+groix.save
+
+spm = Island.new(
+  name: "Saint Pierre et Miquelon",
+  country:"France",
+  title:"A French archipelago only steps away from Canada",
+  description: "Saint-Pierre and Miquelon, an island of astonishing landscapes, sharp relief and a welcoming population.",
+  number_of_guests: 14,
+  price_per_day: 12,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558980745/spm_nsh1hf.jpg",
+  user_id: u.id,
+  address:"Saint Pierre et Miquelon, France"
+  )
+spm.save
+
+
+bora = Island.new(
+  name: "Bora Bora",
+  country:"France",
+  title:"The most celebrated island in the South Pacific",
+  description: "Undoubtedly the most celebrated island in the South Pacific, Bora Bora is French Polynesia's leading lady. Her beauty is unrivaled and her fame, unwavering. Bora Bora is one of the few places on earth that everyone hopes to witness in their lifetime—and once you see it, you are forever enamored",
+  number_of_guests: 14,
+  price_per_day: 12,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558981323/borabora_hidsqo.jpg",
+  user_id: u.id,
+  address:"Bora Bora, France"
+  )
+bora.save
+
+easter = Island.new(
+  name: "Easter island",
+  country:"Chile",
+  title:"The ultimate bucket-list destination",
+  description: "Located at the far eastern point of Polynesia in the middle of the Pacific Ocean, Rapa Nui is a place that has long been shrouded in mystery.",
+  number_of_guests: 14,
+  price_per_day: 12,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558981535/easter_v1twno.jpg",
+  user_id: u.id,
+  address:"Easter Island, Chile"
+  )
+easter.save
+
+
+prince = Island.new(
+  name: "Prince Edward Island",
+  country:"Canada",
+  title:"The garden province",
+  description: "Prince Edward Island is known for its natural beauty, including its 800 km of beaches.",
+  number_of_guests: 10,
+  price_per_day: 25,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558982071/prince_dmooiy.webp",
+  user_id: u.id,
+  address:"Prince Edward Island, Canada"
+  )
+prince.save
+
+
+nansha = Island.new(
+  name: "Nansha Island",
+  country:"China",
+  title:"The islands with the most widely spread of oval coral reefs",
+  description: "Surrounding countries in turn from the west, south, east is Vietnam, Indonesia, Malaysia, Brunei and the Philippines. Nansha Islands consists of more than 550 islands, continents and reefs, sands, beaches, but just about one fifth is come out the sea. ",
+  number_of_guests: 56,
+  price_per_day: 89,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558982607/nansha-islands-01_yyv8ai.png",
+  user_id: u.id,
+  address:"Nansha Islands, China"
+  )
+nansha.save
+
+baffin = Island.new(
+  name: "Baffin Island",
+  country:"Canada",
+  title:"The largest island in Canada",
+  description: "Accessed only by boat or plane, visitors can have a truly unique, remote experience where they'll encounter an environment and wildlife unlike any they've seen before. The Inuit people who live here value sharing as one of the most important characteristics and warmly welcome visitors ",
+  number_of_guests: 78,
+  price_per_day: 87,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558982528/baffin_w6obfs.webp",
+  user_id: u.id,
+  address:"Baffin Islands, China"
+  )
+baffin.save
 
 
 
