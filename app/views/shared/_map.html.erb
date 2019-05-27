@@ -1,19 +1,8 @@
-<div class="card-map">
-  <div id="long"><%= @island.lng%></div>
-  <div id="lat"><%= @island.lat%></div>
-  <div id='map' style='width: 100%; height: 300px;'></div>
-  <script>
-    var long = document.getElementById("long").innerText;
-    var lat = document.getElementById("lat").innerText;
-    mapboxgl.accessToken = 'pk.eyJ1IjoibmFyZnN0YWNrc3RhIiwiYSI6ImNqdm5rY2xiNzB2a2E0OWxlYzM2dDNhbHkifQ.xeRMYy1MxfsDRQcddyCNSQ';
-    var map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v11',
-      center: [long, lat],
-      zoom: 4
-    });
-    new mapboxgl.Marker()
-      .setLngLat([ long, lat ])
-      .addTo(map);
-  </script>
-</div>
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-marker="<%= @marker.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
+
