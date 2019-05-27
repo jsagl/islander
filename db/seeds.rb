@@ -70,7 +70,7 @@ porquerolles = Island.new(
   price_per_day: 999,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558950173/porquerolles/Porquerolles-3_bjk2e1.jpg",
   user_id: u.id
-)
+  )
 porquerolles.save
 
 
