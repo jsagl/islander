@@ -27,7 +27,7 @@ franz = User.create!(
   description: "Franz Franz Chief Happiness Officer at Islander"
   )
 
-marie_auxille = User.create!(
+marieauxille = User.create!(
   email: "marieauxille@gmail.com",
   password: "12345678",
   first_name: "marie-Auxille",

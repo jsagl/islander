@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_27_091653) do
+ActiveRecord::Schema.define(version: 2019_05_27_092314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 2019_05_27_091653) do
   create_table "islands", force: :cascade do |t|
     t.string "name"
     t.string "country"
-    t.decimal "lat"
-    t.decimal "lng"
+    t.float "latitude"
+    t.float "longitude"
     t.string "title"
     t.text "description"
     t.float "rating"
