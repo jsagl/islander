@@ -1,9 +1,10 @@
 <h4>The bookings on my islands</h4>
 <ul>
   <% @my_islands.each do |island| %>
-    <li><%= link_to island.name, island_path(island) %> - Rating: <%= island.rating %><%= link_to "Delete", island_path(island), method: :delete, data: { confirm: "Are you sure?" }%>
+  <div id="wrapper">
+    <li><%= link_to island.name, island_path(island) %> - Rating: <%= island.rating %> - <%= link_to "Delete this island", island_path(island), method: :delete, data: { confirm: "Are you sure?" }%>
       <% if island.bookings != [] %>
-        <div id="wrapper">
+      <p> </p>
         <table id="keywords" cellspacing="0" cellpadding="0">
           <thead>
             <tr>
@@ -26,11 +27,11 @@
             <% end %>
           </tbody>
         </table>
-        </div>
       <% end %>
     </li>
     <br>
     <br>
+  </div>
   <% end %>
 </ul>
 
