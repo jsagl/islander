@@ -10,7 +10,8 @@ import { flatpickr } from "../plugins/flatpickr";
 
 const map = document.getElementById("map");
 const select = document.querySelector(".select2")
-const  dateSelector = document.querySelector(".date-picker");
+const  startDate = document.querySelector(".start-date");
+const  endDate = document.querySelector(".end-date");
 
 if (map) {
   initMapbox();
@@ -21,7 +22,7 @@ if (select) {
   initSelect2();
 }
 
-if (dateSelector) {
+if (startDate || endDate) {
   flatpickr();
 }
 
