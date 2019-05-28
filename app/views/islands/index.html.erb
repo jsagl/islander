@@ -18,7 +18,7 @@
   </div>
 </div>
 
-<div class="container">
+<div>
   <div class="home-island-cards">
     <% @islands.each do |island| %>
       <div class="home-island-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path island.photo, crop: :fill %>')">
