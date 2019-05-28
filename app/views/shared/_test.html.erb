@@ -78,7 +78,9 @@
                         <td><%=booking.start_date.strftime("%b %d, %Y")%></td>
                         <td><%=booking.end_date.strftime("%b %d, %Y")%></td>
                         <td><%=booking.total_price%></td>
-                        <td><%= link_to "Rate my stay", new_booking_review_path(booking) %></td>
+                        <td>
+                          <%= render 'shared/reviewmodal', booking: booking %>
+                        </td>
                       </tr>
                     <% end %>
                   </tbody>
