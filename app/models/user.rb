@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :islands, dependent: :destroy
 
+  mount_uploader :photo, PhotoUploader
+
   validates :first_name, presence: true, length: { minimum: 2 }, format: { with: /\A[\p{L}\s'.-]+\z/,
     message: "Please only use letters" }
   validates :last_name, presence: true, length: { minimum: 2 }, format: { with: /\A[\p{L}\s'.-]+\z/,
