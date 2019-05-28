@@ -6,7 +6,11 @@
           <!-- Nav tabs -->
           <ul class="nav nav-pills padding-0">
             <li class="nav-item">
-              <a class="nav-link active" id="island-tab-btn"data-toggle="tab" href="#chart-view"> My Islands</a>
+              <a class="nav-link active" id="global-tab-btn"data-toggle="tab" href="#global-view"> My Islands</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" id="island-tab-btn"data-toggle="tab" href="#chart-view"> Booking on my islands</a>
             </li>
             <li class="nav-item">
               <a class="nav-link "
@@ -15,78 +19,111 @@
           </ul>
 
         <!-- Tab panes -->
-          <!-- tab my booking -->
-            <div class="tab-content m-t-10">
 
-              <div class="tab-pane" id="table-view">
-                <div class="table-responsive">
-                  <table class="table m-b-5 table-hover">
-                    <thead>
+        <!-- Total islands -->
+          <div class="tab-content m-t-10">
+            <div class="tab-pane active" id="global-view">
+              <div class="table-responsive">
+                <table class="table m-b-5 table-hover">
+                  <thead>
+                    <tr>
+                      <th>Island</th>
+                      <th>Total Revenue</th>
+                      <th>Rating</th>
+                      <th>Update your Island</th>
+                      <th>Delete your Island</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                  <% my_islands.each do |island| %>
+                    <% island.bookings.each do |booking|%>
                       <tr>
-                        <th>Island</th>
-                        <th>From</th>
-                        <th>To</th>
-                        <th>Price ($)</th>
-                        <th>Rate</th>
+                        <td><%=island.name  %></td>
+                        <td><%=booking.user.first_name %></td>
+                        <td><%=booking.start_date.strftime("%b %d, %Y")%></td>
+                        <td><%=booking.end_date.strftime("%b %d, %Y")%></td>
+                        <td><%=booking.total_price%></td>
+                        <% if island.rating  %>
+                          <td><%='%.1f' % island.rating%></span></td>
+                        <% else %>
+                          <td><%= "-" %></span></td>
+                        <% end %>
+                        <td><%= link_to edit_island_path(island), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fas fa-edit"></i><% end %></td>
+                        <td><%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fas fa-trash"></i><% end %></td>
                       </tr>
-                    </thead>
-                    <tbody>
-                      <% my_bookings.each do |booking|%>
-                        <tr>
-                          <td><%=booking.island.name %></td>
-                          <td><%=booking.start_date.strftime("%b %d, %Y")%></td>
-                          <td><%=booking.end_date.strftime("%b %d, %Y")%></td>
-                          <td><%=booking.total_price%></td>
-                          <td><%= link_to "Rate my stay", new_booking_review_path(booking) %></td>
-                        </tr>
-                      <% end %>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-
-            <!-- tab on my island -->
-            <div class="tab-content m-t-10">
-
-              <div class="tab-pane active" id="chart-view">
-                <div class="table-responsive">
-                  <table class="table m-b-5 table-hover">
-                    <thead>
-                      <tr>
-                        <th>Island</th>
-                        <th>Name</th>
-                        <th>From</th>
-                        <th>To</th>
-                        <th>Price ($)</th>
-                        <th>Rating</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-
-                    <% my_islands.each do |island| %>
-                      <% island.bookings.each do |booking|%>
-                        <tr>
-                          <td><%=island.name  %></td>
-                          <td><%=booking.user.first_name %></td>
-                          <td><%=booking.start_date.strftime("%b %d, %Y")%></td>
-                          <td><%=booking.end_date.strftime("%b %d, %Y")%></td>
-                          <td><%=booking.total_price%></td>
-                          <% if island.rating  %>
-                            <td><%=island.rating%></span></td>
-                          <% else %>
-                            <td><%= "-" %></span></td>
-                          <% end %>
-                          <td><%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fas fa-trash"></i><% end %></td>
-                        </tr>
-                      <% end %>
                     <% end %>
-                    </tbody>
-                  </table>
-                </div>
+                  <% end %>
+                  </tbody>
+                </table>
               </div>
             </div>
+        <!-- Booking on my islands -->
+            <div class="tab-pane" id="table-view">
+              <div class="table-responsive">
+                <table class="table m-b-5 table-hover">
+                  <thead>
+                    <tr>
+                      <th>Island</th>
+                      <th>From</th>
+                      <th>To</th>
+                      <th>Price ($)</th>
+                      <th>Rate</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% my_bookings.each do |booking|%>
+                      <tr>
+                        <td><%=booking.island.name %></td>
+                        <td><%=booking.start_date.strftime("%b %d, %Y")%></td>
+                        <td><%=booking.end_date.strftime("%b %d, %Y")%></td>
+                        <td><%=booking.total_price%></td>
+                        <td><%= link_to "Rate my stay", new_booking_review_path(booking) %></td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+        <!-- My bookings -->
+            <div class="tab-pane" id="chart-view">
+              <div class="table-responsive">
+                <table class="table m-b-5 table-hover">
+                  <thead>
+                    <tr>
+                      <th>Island</th>
+                      <th>Name</th>
+                      <th>From</th>
+                      <th>To</th>
+                      <th>Price ($)</th>
+                      <th>Rating</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                  <% my_islands.each do |island| %>
+                    <% island.bookings.each do |booking|%>
+                      <tr>
+                        <td><%=island.name  %></td>
+                        <td><%=booking.user.first_name %></td>
+                        <td><%=booking.start_date.strftime("%b %d, %Y")%></td>
+                        <td><%=booking.end_date.strftime("%b %d, %Y")%></td>
+                        <td><%=booking.total_price%></td>
+                        <% if island.rating  %>
+                          <td><%=island.rating%></span></td>
+                        <% else %>
+                          <td><%= "-" %></span></td>
+                        <% end %>
+                        <td><%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fas fa-trash"></i><% end %></td>
+                      </tr>
+                    <% end %>
+                  <% end %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>
