@@ -1,15 +1,24 @@
-<h1>Edit my awesome island</h1>
+<div class="container container-bg-image">
+  <div class="row justify-content-center">
+    <h1 class='text-center'>Edit my island</h1>
+    <div class="col-md-8">
+      <%= simple_form_for @island, html: { class: "form-bg-white" } do |f| %>
+        <%= f.input :name %>
+        <%= f.input :country, collection: Island::COUNTRIES, input_html: { class: 'select2' } %>
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :number_of_guests %>
+        <%= f.input :price_per_day %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <div class="form-btn">
+          <%= link_to "Cancel", dashboard_path, class: "btn btn-outline-danger" %>
+          <%= f.submit "Confirm", class: "btn btn-primary" %>
+        </div>
+       <% end %>
+    </div>
+  </div>
+</div>
 
-<%= simple_form_for @island do |f| %>
-  <%= f.input :name %>
-  <%= f.input :country %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :number_of_guests %>
-  <%= f.input :price_per_day %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.submit "Confirm", class: "btn btn-primary" %>
-<% end %>
 
-<%= link_to "Cancel", island_path(@island), class: "btn btn-danger" %>
+

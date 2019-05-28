@@ -40,10 +40,12 @@ class IslandsController < ApplicationController
 
   def edit
     @island = Island.find(params[:id])
+    authorize @island
   end
 
   def update
     @island = Island.find(params[:id])
+    authorize @island
     if @island.update(island_params)
       redirect_to island_path(@island)
     else
