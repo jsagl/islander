@@ -34,7 +34,7 @@ marieauxille = User.new(
   last_name: "Denis",
   birth_date: "29/02/2000",
   description: "Porquerolles girl",
-  remote_photo_url:"https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558966685/Photo_du_11-12-2017_a%CC%80_12.12_2_qod5p6.jpg"
+  remote_photo_url:"https://res.cloudinary.com/dwkzd2xzh/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1559061780/self_party_zx1udl.png"
   )
 marieauxille.save
 
