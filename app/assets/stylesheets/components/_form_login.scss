@@ -1,4 +1,31 @@
 .form_login_container {
-  margin-top: 30px;
+  margin-top: 50px;
   box-shadow: 2px 2px 11px #8080802b;
+  background-image: url(new.jpg);
+  background-size: cover;
 }
+
+.row {
+  background-color: rgba(255, 255, 255, .6);
+}
+
+
+#new_island {
+  font-family: "Brown", "Helvetica", "sans-serif";
+  font-size: 20px;
+
+}
+
+.btn-primary {
+  border-radius:5px;
+  font-weight: bolder;
+}
+
+.btn-danger {
+ border-radius:5px;
+ font-weight: bolder;
+
+}
+
+
+
