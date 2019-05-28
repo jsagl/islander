@@ -275,7 +275,6 @@ class Island < ApplicationRecord
     },
     using: {
       tsearch: { prefix: true },
-      tsearch: {dictionary: "english"},
-      tsearch: {dictionary: "french"}
+      tsearch: {dictionary: "english"}
     }
 end
