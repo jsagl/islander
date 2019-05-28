@@ -25,17 +25,23 @@
         </div>
 
         <!-- ownerpics -->
-        <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
+        <div class="card-trip-user avatar-bordered">
+          <%= cl_image_tag @island.user.photo %>
+        </div>
       </div>
     </div>
 
     <!-- CARD INFO -->
     <div class="card-info col-xs-12 col-md-4 col-lg-6">
       <!-- CARD MAP/METEO -->
+<<<<<<< HEAD
       <%= render 'shared/meteo' %>
       <!-- BOOKING PART  -->
       <%= render 'shared/booking' %>
 
+=======
+      <%= render 'shared/map' %>
+>>>>>>> master
     </div>
   </div>
 </div>

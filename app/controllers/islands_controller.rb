@@ -22,6 +22,7 @@ class IslandsController < ApplicationController
 
   def create
     @island = Island.new(island_params)
+    @island.address = "#{@island.name}, #{@island.country}"
     @island.user = current_user
     authorize @island
     if @island.save

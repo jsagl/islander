@@ -2,7 +2,7 @@
 
 <%= simple_form_for @island do |f| %>
   <%= f.input :name %>
-  <%= f.input :country, collection: Island::COUNTRIES %>
+  <%= f.input :country, collection: Island::COUNTRIES, input_html: { class: 'select2' } %>
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :number_of_guests %>

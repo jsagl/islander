@@ -1,54 +1,46 @@
-<div class="container mt-3">
-<div class="row">
-  <div class="banner-home" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://source.unsplash.com/500x400/?island');">
-</div>
-</div>
-
-
-<!-- card search -->
-  <div class="row">
-    <div class="col-4">
-      <div class="search-card">
-        <h5>Search an island!</h5>
-        <%#= simple_form_for(@islands) do |f| %>
-        <%#= f.input :number_of_guests, class: "input-group-addon" %>
-        <%#= f.input :country, class: "input-group-addon" %>
-        <%#= f.submit "Search", class: "btn btn-success mt-2" %>
-        <%# end %>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.1) 0%, rgba(0,36,61,0.2) 50%), url(https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558957833/index_banner_cmpdu3.jpg);">
+  <div class="container">
+    <h3>Welcome on Islander!</h3>
+    <%= simple_form_for :search, url: islands_path, method: :get do |f| %>
+      <div class="search-form-control form-group">
+        <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+        <button name="button" type="submit" class="btn btn-flat">
+          <i class="fas fa-search"></i> Search
+        </button>
       </div>
-    </div>
+    <% end %>
   </div>
+</div>
 
-<!-- island cards -->
-
-  <div class="row">
-    <div class="col-12">
-      <h1>All our islands</h1>
-    </div>
+<div class="container">
+  <div class="title">
+    <h3>Our islands</h3>
   </div>
-  <div class="row">
+  <div class="home-island-cards">
     <% @islands.each do |island| %>
-      <div class="col-4">
-        <div class="home-island-card">
-            <div class="" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path island.photo, height: 300, width: 400, crop: :fill %>')">
-            <div class="home-island-card-content">
-              <h4><%= island.title %></h4>
-              <p><%= island.name %></p>
-              <p><%= island.country %></p>
-            </div>
-            <div class="home-island-card-actions">
-              <%= link_to "Know more about this island", island_path(island), class: 'btn btn-primary' %>
-              <%= link_to "Book now", new_island_booking_path(island), class: "btn btn-primary"%>
-            </div>
-          </div>
+      <div class="home-island-card">
+        <%= cl_image_tag island.photo, height: 300, crop: :fill %>
+        <div class="home-island-card-content">
+          <h5><%= island.name %></h5>
+          <p><%= island.title %></p>
+          <p><%= island.country %></p>
+        </div>
+        <div class="home-island-card-actions">
+          <%= link_to "Know more about this island", island_path(island)%>
         </div>
       </div>
     <% end %>
-
-    <% if policy(Island).create? %>
-      <%= link_to "Add an island", new_island_path, class: "btn btn-primary"%>
-    <% end %>
   </div>
-</div>
 
+  <div class="row">
+    <div class="col-12">
+      <div class="add">
+        <% if policy(Island).create? %>
+          <%= link_to "Add an island", new_island_path, class: "btn btn-primary"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
 
