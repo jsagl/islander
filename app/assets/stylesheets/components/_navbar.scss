@@ -4,12 +4,13 @@
   position: fixed;
   width: 100vw;
   top: 0;
-  transition: 0.3s background-color ease;
+  transition: 0.1s background-color ease;
   color:white;
+  z-index: 9999;
 }
 
 .navbar-lewagon-white {
-  background-color: rgba(250,250,250,0.8);
+  background-color: rgba(245,245,245,0.9);
 }
 
 .navbar-lewagon .navbar-collapse {
