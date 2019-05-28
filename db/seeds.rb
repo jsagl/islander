@@ -325,7 +325,7 @@ macquarie = Island.new(
   user_id: u.id,
   address:"Macquarie Islands, New Zealand"
   )
-macquairie.save
+macquarie.save
 
 
 brehat = Island.new(
