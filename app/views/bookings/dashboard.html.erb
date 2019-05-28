@@ -1,8 +1,10 @@
 <div class="avatar">
   <!-- <p> <%= cl_image_tag current_user.photo%> </p> -->
 </div>
-<div>
+<div class="welcome">
 <h4> Welcome back <%= current_user.first_name %> !</h4>
+
+
 </div>
 <h4>The bookings on my islands</h4>
 <% @my_islands.each do |island| %>

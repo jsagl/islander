@@ -1,9 +1,9 @@
 <h1>Book <%= @island.name %></h1>
 
 <%= simple_form_for [@island, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit "Confirm", class: "btn btn-primary" %>
+  <div class="form-row">
+    <%= f.input :start_date, as: :string, label:false, placeholder: "Start date",  input_html: { class: 'date-picker col-11' } %>
+    <%= f.input :end_date, as: :string, label: false, label:false, placeholder: "End date",  input_html: { class: 'date-picker col-11' } %>
+  </div>
+    <%= f.submit "Confirm", class: "btn btn-primary" %>
 <% end %>
-
-<%= link_to "Cancel", island_path(@island), class: "btn btn-danger" %>
