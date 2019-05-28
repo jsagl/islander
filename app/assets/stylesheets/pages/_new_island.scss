@@ -1,0 +1,16 @@
+.form-bg-white {
+  font-family: "Brown", "Helvetica", "sans-serif";
+  font-size: 20px;
+  background-color: rgba(255, 255, 255, .6);
+  border-radius: 10px;
+  padding: 50px;
+}
+.form-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .btn {
+    width: 200px;
+    margin: 0 5px;
+  }
+}

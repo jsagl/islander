@@ -1,24 +1,24 @@
-<div class="container form_login_container">
-  <div class="row">
-    <h1>Add my awesome island</h1>
-    <div class="col-md-6">
-
-<%= simple_form_for @island do |f| %>
-  <%= f.input :name %>
-  <%= f.input :country, collection: Island::COUNTRIES, input_html: { class: 'select2' } %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :number_of_guests %>
-  <%= f.input :price_per_day %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <div class="confirm">
-  <%= f.submit "Confirm", class: "btn btn-primary" %>
-  <%= link_to "Cancel", islands_path, class: "btn btn-danger" %>
-  </div>
-<% end %>
+<div class="container container-bg-image">
+  <div class="row justify-content-center">
+    <h1 class='text-center'>Add my awesome island</h1>
+    <div class="col-md-8">
+      <%= simple_form_for @island, html: { class: "form-bg-white" } do |f| %>
+        <%= f.input :name %>
+        <%= f.input :country, collection: Island::COUNTRIES, input_html: { class: 'select2' } %>
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :number_of_guests %>
+        <%= f.input :price_per_day %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <div class="form-btn">
+          <%= link_to "Cancel", islands_path, class: "btn btn-outline-danger" %>
+          <%= f.submit "Confirm", class: "btn btn-primary" %>
+        </div>
+       <% end %>
     </div>
   </div>
 </div>
+
 
 
