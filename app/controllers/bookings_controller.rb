@@ -22,12 +22,12 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.island = @island
     @booking.user = current_user
-    @booking.total_price = (@booking.end_date - @booking.start_date).to_i * @island.price_per_day
+    @booking.total_price = (@booking.end_date - @booking.start_date).to_i * @island.price_per_day if (!@booking.end_date.nil? && !@booking.start_date.nil?)
     authorize @booking
     if @booking.save
       redirect_to dashboard_path
     else
-      render "new"
+      render "islands/show"
     end
   end
 

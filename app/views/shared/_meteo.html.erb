@@ -1,34 +1,6 @@
-<div class="weather">
-<!--   <script>
-  const mapElement = document.getElementById('map');
-  const marker = JSON.parse(mapElement.dataset.marker);
-    fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${marker.lat}&lon=${marker.lng}&appid=6ca4f6a194ba6dcaaea2d9ee4f6fe1bd`)
-      .then(response => response.json())
-      .then((dataa) => {
-        const towni = dataa.name;
-        const weath = dataa.weather[0].description;
-        console.log(weath);
-        const wea = document.querySelector("#weath");
-        wea.insertAdjacentText('beforeend', weath);
 
-        const kelvin = -273.15;
-        const temp = `${Math.round((dataa.main.temp + kelvin), 2)}°C`;
-        console.log(temp);
-        const tp = document.querySelector("#temp");
-        tp.insertAdjacentText('beforeend', temp);
-
-        const icone = dataa.weather[0].icon;
-        const source = `http://openweathermap.org/img/w/${icone}.png`;
-        const im = document.querySelector("#icon");
-        im.setAttribute('src', source);
-        console.log(source);
-      });
-  </script> -->
-  <div id="weather">
-    <p id="weath"></p>
-    <div class="d-flex">
-      <img src="" alt="Weather Icon" id="icon">
-      <h2 id="temp"></h2>
-    </div>
-  </div>
-</div>
+        <div id="weather-result">
+<!--           <h4 id="weather-description"></h4> -->
+          <img src="" alt="" id="weather-image" class="w-25">
+          <h4 id="temperature"></h4>
+        </div>
