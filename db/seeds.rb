@@ -65,7 +65,7 @@ porquerolles = Island.new(
   number_of_guests: 11,
   price_per_day: 999,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558950173/porquerolles/Porquerolles-3_bjk2e1.jpg",
-  user_id: u.id,
+  user_id: jean.id,
   address: "Porquerolles, France"
 )
 porquerolles.save
@@ -79,7 +79,7 @@ patmos = Island.new(
   number_of_guests: 11,
   price_per_day: 150,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558951295/patmos_yeaxeq.jpg",
-  user_id: u.id,
+  user_id: frantz.id,
   address: "Patmos, Greece"
 )
 patmos.save
@@ -92,7 +92,7 @@ guernesey = Island.new(
   description: "Just an hour away from Diélette or Carteret, discover Guernsey, Jersey's little sister.Here nature is queen and the sea generous.Afar from the daily hustle and bustle, Guernsey promises a stay out of time.English gardens, ramparts ... Many landscapes of irresistible beauty await you, you will also find castles, manor houses, museums ... and the famous Hauteville House house where Victor Hugo lived during his exile.",
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558951542/guernesey_cps4nb.jpg",
   price_per_day: 150,
-  user_id: v.id,
+  user_id: frantz.id,
   number_of_guests: 10,
   address: "Guernesey, United Kingdom"
   )
@@ -119,7 +119,7 @@ vis = Island.new(
   number_of_guests: 15,
   price_per_day: 3,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558952428/vis_iyp3xh.jpg",
-  user_id: u.id,
+  user_id: marieauxille.id,
   address: "Vis,Croatia "
 )
 vis.save
@@ -132,7 +132,7 @@ iff = Island.new(
   number_of_guests: 25,
   price_per_day: 130,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558952735/if_ecsikz.jpg",
-  user_id: u.id,
+  user_id: frantz.id,
   address: "Chateau d'if, France"
   )
 iff.save
@@ -146,7 +146,7 @@ terceira = Island.new(
   number_of_guests: 20,
   price_per_day: 100,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558953687/terceira_jpzmqv.jpg",
-  user_id: v.id,
+  user_id: marieauxille.id,
   address: "Terceira, Portugal"
   )
 terceira.save
@@ -160,7 +160,7 @@ palawan = Island.new(
   number_of_guests: 50,
   price_per_day: 100,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558954043/Palawan-islands_dxppoz.jpg",
-  user_id: v.id,
+  user_id: basile.id,
   address: "Palawan Island, Philippines"
   )
 palawan.save
@@ -173,7 +173,7 @@ capri = Island.new(
   number_of_guests: 50,
   price_per_day: 100,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558954487/Capri-island_ag2opp.jpg",
-  user_id: v.id,
+  user_id: jean.id,
   address: "Capri, Italy"
   )
 capri.save
@@ -186,7 +186,7 @@ maldives = Island.new(
   number_of_guests: 67,
   price_per_day: 100,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558954741/Maldives-islands_g05xgo.jpg",
-  user_id: v.id,
+  user_id: marieauxille.id,
   address: "Maldives"
   )
 maldives.save
@@ -199,7 +199,7 @@ seychelles = Island.new(
   number_of_guests: 67,
   price_per_day: 100,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558954748/Seychelles-islands_jrrn44.jpg",
-  user_id: v.id,
+  user_id: marieauxille.id,
   address: "Seychelles"
   )
 seychelles.save
@@ -212,7 +212,7 @@ polynesia = Island.new(
   number_of_guests: 67,
   price_per_day: 100,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558954745/French-Polynesia_fdzzva.jpg",
-  user_id: v.id,
+  user_id: frantz.id,
   address: "French Polynesia"
   )
 polynesia.save
@@ -226,7 +226,7 @@ kauai = Island.new(
   number_of_guests: 98,
   price_per_day: 190,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558956895/kauai_jhq6xf.jpg",
-  user_id: v.id,
+  user_id: basile.id,
   address: "Kauai, Hawai"
 
   )
@@ -240,7 +240,7 @@ jamaica = Island.new(
   number_of_guests: 90,
   price_per_day: 100,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558958293/jamaica_kgaiz1.jpg",
-  user_id: v.id,
+  user_id: jean.id,
   address: "Jamaica"
   )
 jamaica.save
@@ -254,7 +254,7 @@ sicily = Island.new(
   number_of_guests: 150,
   price_per_day: 13,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558959085/sicily_ng8bnf.jpg",
-  user_id: u.id,
+  user_id: basile.id,
   address: "Sicily, Italy"
 )
 sicily.save
@@ -268,7 +268,7 @@ ushaia = Island.new(
   number_of_guests: 1,
   price_per_day: 13,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558975692/ushuaia_nizyej.jpg",
-  user_id: u.id,
+  user_id: frantz.id,
   address: "Ushaia, Argentina"
 )
 ushaia.save
@@ -295,7 +295,7 @@ iceland = Island.new(
   number_of_guests: 34,
   price_per_day: 160,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558976240/iceland_jbrg0a.jpg",
-  user_id: u.id,
+  user_id: marieauxille.id,
   address: "Iceland"
 )
 iceland.save
@@ -363,7 +363,7 @@ groix = Island.new(
   number_of_guests: 145,
   price_per_day: 76,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558980624/groix_d1b567.jpg",
-  user_id: u.id,
+  user_id: basile.id,
   address:"Groix, France"
   )
 groix.save
@@ -376,7 +376,7 @@ spm = Island.new(
   number_of_guests: 14,
   price_per_day: 12,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558980745/spm_nsh1hf.jpg",
-  user_id: u.id,
+  user_id: frantz.id,
   address:"Saint Pierre et Miquelon, France"
   )
 spm.save
@@ -390,7 +390,7 @@ bora = Island.new(
   number_of_guests: 14,
   price_per_day: 12,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558981323/borabora_hidsqo.jpg",
-  user_id: u.id,
+  user_id: basile.id,
   address:"Bora Bora, France"
   )
 bora.save
@@ -403,7 +403,7 @@ easter = Island.new(
   number_of_guests: 14,
   price_per_day: 12,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558981535/easter_v1twno.jpg",
-  user_id: u.id,
+  user_id: marieauxille.id,
   address:"Easter Island, Chile"
   )
 easter.save
@@ -417,7 +417,7 @@ prince = Island.new(
   number_of_guests: 10,
   price_per_day: 25,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558982071/prince_dmooiy.webp",
-  user_id: u.id,
+  user_id: marieauxille.id,
   address:"Prince Edward Island, Canada"
   )
 prince.save
@@ -431,7 +431,7 @@ nansha = Island.new(
   number_of_guests: 56,
   price_per_day: 89,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558982607/nansha-islands-01_yyv8ai.png",
-  user_id: u.id,
+  user_id: frantz.id,
   address:"Nansha Islands, China"
   )
 nansha.save
@@ -444,7 +444,7 @@ baffin = Island.new(
   number_of_guests: 78,
   price_per_day: 87,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558982528/baffin_w6obfs.webp",
-  user_id: v.id,
+  user_id: frantz.id,
   address:"Baffin Island, Nunavut, China"
   )
 baffin.save
@@ -457,7 +457,7 @@ kos = Island.new(
   number_of_guests: 7,
   price_per_day: 89,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558991399/kos_evhf3l.jpg",
-  user_id: v.id,
+  user_id: basile.id,
   address:"Kos, Greece"
   )
 kos.save
@@ -496,7 +496,7 @@ bali = Island.new(
   number_of_guests: 200,
   price_per_day: 87,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558991869/bali_n9o5le.jpg",
-  user_id: v.id,
+  user_id: jean.id,
   address:"Bali, Indonesia"
   )
 bali.save
@@ -510,11 +510,21 @@ ellis = Island.new(
   number_of_guests: 200,
   price_per_day: 87,
   remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558993018/ellisisland_ffn3l8.jpg",
-  user_id: v.id,
+  user_id: marieauxille.id,
   address:"Ellis Island"
   )
 ellis.save
 
+# d1 = DateTime.new(2015,22,06)
+# d2 = DateTime.new(2016,11,06)
+
+# booking = Booking.new(
+#   start_date: d1,
+#   end_date: d2,
+#   total_price: 150,
+#   island_id: bali.id,
+#   user_id: marieauxille.id)
+# booking.save
 
 
 puts "Seeding completed!"
