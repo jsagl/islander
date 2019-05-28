@@ -3,14 +3,16 @@
   background: transparent;
   position: fixed;
   width: 100vw;
+  height: $navbar-height;
   top: 0;
   transition: 0.1s background-color ease;
-  color:white;
+  font-size: 16px;
+  font-weight: lighter;
   z-index: 9999;
 }
 
 .navbar-lewagon-white {
-  background-color: rgba(245,245,245,0.9);
+  background-color: rgba(245,245,245,0.9) !important;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -20,3 +22,11 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.margin-top-navbar {
+  margin-top: $navbar-height;
+}
+
+
+
+
