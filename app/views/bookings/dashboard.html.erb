@@ -5,45 +5,16 @@
 <h4> Welcome back <%= current_user.first_name %> !</h4>
 </div>
 <h4>The bookings on my islands</h4>
-<ul>
-  <% @my_islands.each do |island| %>
-  <div id="wrapper">
-    <li><h6><%= link_to island.name, island_path(island) %> - Rating: <%= island.rating %> - <%= link_to "Delete this island", island_path(island), method: :delete, data: { confirm: "Are you sure?" }%></h6>
-      <% if island.bookings != [] %>
-      <p> </p>
-        <table id="keywords" cellspacing="0" cellpadding="0">
-          <thead>
-            <tr>
-              <th><span>Name</span></th>
-              <th><span>From</span></th>
-              <th><span>To</span></th>
-              <th><span>Price</span></th>
-              <th><span>Actions</span></th>
-            </tr>
-          </thead>
-          <tbody>
-            <%island.bookings.each do |booking|%>
-              <tr>
-                <td class="lalign"><%=booking.user.first_name %></td>
-                <td><%=booking.start_date.strftime("%b %d, %Y")%></td>
-                <td><%=booking.end_date.strftime("%b %d, %Y")%></td>
-                <td><%=booking.total_price%></td>
-                <td><%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %><i class=“fas fa-trash”></i><% end %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-        <%= render 'shared/test', island: island  %>
-      <% end %>
-    </li>
-    <br>
-    <br>
-  </div>
-  <% end %>
-</ul>
+<% @my_islands.each do |island| %>
+  <% island %>
+
+<%end %>
 
 
-<h4>My current bookings:</h4>
-<%= render 'shared/existingbookings' %>
+    <%= render 'shared/test', my_islands: @my_islands, my_bookings: @my_bookings  %>
+
+
+
+
 
 
