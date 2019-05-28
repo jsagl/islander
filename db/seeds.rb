@@ -422,6 +422,17 @@ prince = Island.new(
   )
 prince.save
 
+rykers = Island.new(
+  name: "Rykers Island",
+  country:"United States",
+  title:"Maximum security Island very close to NYC",
+  description: "Island in the East River between Queens and the Bronx that is home to New York City's main jail complex.Close to the runways of LaGuardia Airport",
+  number_of_guests: 150,
+  price_per_day: 89,
+  remote_photo_url: "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1559063407/rikers_aeqw2r.jpg",
+  user_id: marieauxille.id,
+  address:"New York City")
+rykers.save
 
 nansha = Island.new(
   name: "Nansha Island",
@@ -464,7 +475,7 @@ kos.save
 
 alcatraz = Island.new(
   name: "Alcatraz",
-  country:"USA",
+  country:"United States",
   title:"On the steps of Al Capone",
   description: "Spend holidays at the Rock !",
   number_of_guests: 10,
@@ -504,7 +515,7 @@ bali.save
 
 ellis = Island.new(
   name: "Ellis Island",
-  country:"USA",
+  country:"United States",
   title:"Close to the Big Apple",
   description: "Give me your tired, your poor, your huddled masses yearning to breathe free, the wretched refuse of your teeming shore, send these, the homeless, tempest-tossed to me, I lift my lamp beside the golden door!",
   number_of_guests: 200,
@@ -513,18 +524,26 @@ ellis = Island.new(
   user_id: marieauxille.id,
   address:"Ellis Island"
   )
-ellis.save
+ellis.save!
 
-# d1 = DateTime.new(2015,22,06)
-# d2 = DateTime.new(2016,11,06)
 
-# booking = Booking.new(
-#   start_date: d1,
-#   end_date: d2,
-#   total_price: 150,
-#   island_id: bali.id,
-#   user_id: marieauxille.id)
-# booking.save
+booking = Booking.new(
+  start_date: "2015-06-22",
+  end_date: "2016-06-23",
+  total_price: 150,
+  island_id: bali.id,
+  user_id: marieauxille.id
+  )
+booking.save!
+
+booking = Booking.new(
+  start_date: "2016-06-22",
+  end_date: "2016-06-23",
+  total_price: 150,
+  island_id: porquerolles.id,
+  user_id: frantz.id
+  )
+booking.save!
 
 
 puts "Seeding completed!"
