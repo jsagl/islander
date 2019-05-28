@@ -263,4 +263,19 @@ class Island < ApplicationRecord
   validates :number_of_guests, presence: true, numericality: { only_integer: true, greater_than: 0 }
   geocoded_by :name
   after_validation :geocode, if: :will_save_change_to_address?
+
+
+  include PgSearch
+  pg_search_scope :search_by_name_and_country_and_title_and_description,
+    against: {
+      name: 'A',
+      country: 'B',
+      title: 'C',
+      description:'D'
+    },
+    using: {
+      tsearch: { prefix: true },
+      tsearch: {dictionary: "english"},
+      tsearch: {dictionary: "french"}
+    }
 end

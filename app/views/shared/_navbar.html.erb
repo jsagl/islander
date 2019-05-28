@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "root_path", class: "navbar-brand" do %>
+  <%= link_to "#", root_path, class: "navbar-brand" do %>
     <%= image_tag "https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558962974/logo_fdcmdz.svg" %>
     <% end %>
 
@@ -12,19 +12,19 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", root_path, class: "nav-link" %>
+          <%= link_to "Book an Island", root_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Add an Island", new_island_path, class: "nav-link" %>
         </li>
+        <li class="nav-item">
+          <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
         <li class="nav-item dropdown">
           <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Add an Island", new_island_path, class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
+            <%= link_to "Book an Island", root_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
