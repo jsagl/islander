@@ -1,6 +1,6 @@
 .banner{
   background-size: cover;
-  height: 100vh;
+  height: 102vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,6 +22,7 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   margin-bottom: 48px;
 }
+
 
 .search-form-control {
   position: relative;
@@ -127,7 +128,7 @@
  align-items:center;
  text-align:center;
  border: 1px solid white;
- background-color: rgba(245,245,245,0.1);
+ background-color: rgba(240,240,240,0.1);
  border-radius: 18px;
  padding: 10px 15px;
  position: absolute;
