@@ -20,13 +20,6 @@ const initMapbox = () => {
   }
 };
 
-const addMarkerToMap = (map, marker) => {
-  const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
-  new mapboxgl.Marker()
-    .setLngLat([ marker.lng, marker.lat ])
-    .setPopup(popup) // add this
-    .addTo(map);
-};
 // const long = document.getElementById("long").innerText;
 // const lat = document.getElementById("lat").innerText;
 // mapboxgl.accessToken = 'pk.eyJ1IjoibmFyZnN0YWNrc3RhIiwiYSI6ImNqdm5rY2xiNzB2a2E0OWxlYzM2dDNhbHkifQ.xeRMYy1MxfsDRQcddyCNSQ';
@@ -38,7 +31,4 @@ const addMarkerToMap = (map, marker) => {
 // new mapboxgl.Marker()
 //   .setLngLat([ long, lat ])
 //   .addTo(map);
-
-
-export { addMarkerToMap };
 export { initMapbox };
