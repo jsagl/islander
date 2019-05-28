@@ -34,7 +34,14 @@
     <!-- CARD INFO -->
     <div class="card-info col-xs-12 col-md-4 col-lg-6">
       <!-- CARD MAP/METEO -->
+<<<<<<< HEAD
+      <%= render 'shared/meteo' %>
+      <!-- BOOKING PART  -->
+      <%= render 'shared/booking' %>
+
+=======
       <%= render 'shared/map' %>
+>>>>>>> master
     </div>
   </div>
 </div>
@@ -42,6 +49,11 @@
 
 <%= render 'shared/reviews' %>
 
+
+<!-- BOOKING PART  -->
+<%= render 'shared/existingbookings' %>
+
+<%= render 'shared/test' %>
 
 <%= link_to "Book a stay", new_island_booking_path(@island), class: "btn btn-primary"%>
 <%#= link_to "Add a review", booking_path(@island.booking), class: "btn btn-primary"%>
