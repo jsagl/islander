@@ -9,19 +9,22 @@
         </div>
         <div class="body">
           <!-- Nav tabs -->
-          <ul class="nav nav-tabs padding-0">
+          <ul class="nav nav-pills padding-0">
             <li class="nav-item">
-              <a class="nav-link active" data-toggle="tab" href="#chart-view"> On my Islands</a>
+              <a class="nav-link active" id="island-tab-btn"data-toggle="tab" href="#chart-view"> On my Islands</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#table-view">My bookings View</a>
+              <a class="nav-link "
+                id="booking-tab-btn" data-toggle="tab" href="#table-view">My bookings View</a>
             </li>
           </ul>
+
+
+
+
         <!-- Tab panes -->
           <div class="tab-content m-t-10">
-            <div class="tab-pane active" id="chart-view">
-              <div id="area_chart" class="graph m-b-20"></div>
-            </div>
+
             <div class="tab-pane" id="table-view">
               <div class="table-responsive">
                 <table class="table m-b-5 table-hover">
@@ -36,8 +39,43 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <%@island.bookings.each do |booking|%>
+                    <% island.bookings.each do |booking|%>
                       <tr>
+                        <td><%=booking.user.first_name %></td>
+                        <td><%=booking.start_date.strftime("%b %d, %Y")%></td>
+                        <td><%=booking.end_date.strftime("%b %d, %Y")%></td>
+                        <td><%=booking.total_price%></td>
+                        <td><span class="badge badge-success">DONE</span></td>
+                        <td><%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fas fa-trash"></i><% end %></td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="tab-content m-t-10">
+
+            <div class="tab-pane active" id="chart-view">
+              <div class="table-responsive">
+                <table class="table m-b-5 table-hover">
+                  <thead>
+                    <tr>
+                      <th>Island</th>
+                      <th>Name</th>
+                      <th>From</th>
+                      <th>To</th>
+                      <th>Price</th>
+                      <th>Rating</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% island.bookings.each do |booking|%>
+                      <tr>
+                        <td><%=island.name  %></td>
                         <td><%=booking.user.first_name %></td>
                         <td><%=booking.start_date.strftime("%b %d, %Y")%></td>
                         <td><%=booking.end_date.strftime("%b %d, %Y")%></td>
@@ -61,7 +99,7 @@
 
 <div class="row">
   <div class="col-4 p-r-0">
-    <h6 class="m-b-5"><%= @island.bookings.all.count %></h6>
+    <h6 class="m-b-5"><%= island.bookings.all.count %></h6>
       <small>All Bookings on my islands </small>
   </div>
   <div class="col-4 p-l-0 p-r-0">
