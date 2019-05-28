@@ -13,6 +13,8 @@ class IslandsController < ApplicationController
       infoWindow: render_to_string(partial: "infowindow", locals: { island: @island })
     }
     authorize @island
+    @booking = Booking.new
+    authorize @booking
   end
 
   def new
