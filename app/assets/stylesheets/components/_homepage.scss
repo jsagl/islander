@@ -6,11 +6,18 @@
   justify-content: center;
   background-position: center;
   text-align: center;
-  margin-bottom: 32px;
+  color: #eee;
 }
 
 .banner h3 {
   font-size: 48px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin-bottom: 48px;
+}
+
+.banner p {
+  font-size: 24px;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   margin-bottom: 48px;
@@ -58,10 +65,13 @@
 }
 
 
+
+
 .home-island-cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 32px;
+  padding-top: 32px;
 }
 
 @media (min-width: 100px) and (max-width: 575px) {
@@ -93,29 +103,60 @@
   }
 }
 
-
-.home-island-cards .home-island-card {
-  overflow: hidden;
-  background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+.home-island-card {
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
 }
 
-// .home-island-cards .home-island-card > img {
-//   height: 230px;
-//   width: 100%;
-//   object-fit: cover;
-// }
 
-.home-island-cards .home-island-card .home-island-card-content {
-  border-top: 1px solid rgba(160,160,160,0.2);
-  padding: 16px 24px;
-  text-align:center;
+.home-island-card-name{
+ font-size: 24px;
+ font-weight: bold;
+ align-items:center;
+ text-align:center;
+ border: 1px solid white;
+ background-color: rgba(245,245,245,0.1);
+ border-radius: 18px;
+ padding: 10px 15px;
+ position: absolute;
 }
 
-.home-island-cards .home-island-card .home-island-card-actions {
-  border-top: 1px solid rgba(160,160,160,0.2);
-  padding: 16px
+
+.home-island-card-country p{
+ font-size: 20px;
+ font-weight: lighter;
+ text-align:center;
+ position:relative;
+ bottom:-120px;
+}
+
+
+.home-island-card-actions {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+
+
+.home-island-card-actions:hover {
+  opacity: 0.1;
 }
 
 .add {
