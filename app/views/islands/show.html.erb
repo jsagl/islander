@@ -70,3 +70,20 @@
     </div>
   </div>
 </div>
+
+<!-- REVIEWS CARDS -->
+
+<%= render 'shared/reviews' %>
+
+
+<!-- BOOKING PART  -->
+<%#= render 'shared/existingbookings' %>
+
+<%#= render 'shared/test' %>
+
+<%= link_to "Book a stay", new_island_booking_path(@island), class: "btn btn-primary"%>
+<%#= link_to "Add a review", booking_path(@island.booking), class: "btn btn-primary"%>
+
+<%= link_to "Go back to islands list", islands_path, class: "btn btn-primary"%>
+
+
