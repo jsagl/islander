@@ -7,8 +7,8 @@ import { findWeather } from '../plugins/map';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { initSelect2 } from '../plugins/init_select2';
 import { tabManager } from '../component/tab';
-import { flatpickr } from "../plugins/flatpickr";
-
+import { initFlatpickr } from "../plugins/flatpickr";
+import { bookingInfo } from "../components/booking";
 
 const map = document.getElementById("map");
 const select = document.querySelector(".select2")
@@ -27,8 +27,12 @@ if (select) {
 tabManager();
 
 if (startDate || endDate) {
-  flatpickr();
+  initFlatpickr();
+  bookingInfo();
+}
+
+if (startDate || endDate) {
+  bookingInfo();
 }
 
 initUpdateNavbarOnScroll();
-
