@@ -2,7 +2,7 @@ function scrollSearch() {
   const button = document.querySelector("#submit-search");
   button.addEventListener("click", (e) => {
     // e.preventDefault()
-    document.querySelector('.home-island-cards').scrollIntoView();
+    document.querySelector('.home-island-cards').scrollIntoView({behavior: "smooth"});
   });
 }
 
