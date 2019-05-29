@@ -1,9 +1,9 @@
 function scrollSearch() {
   const button = document.querySelector(".button");
   if (button) {
-    button.addEventListener("click", (e) => {
+    button.addEventListener("submit", (e) => {
       e.preventDefault();
-      document.getElementById('results').scrollIntoView();
+      document.getElementById('results').scrollIntoView({behavior: "smooth"});
     });
   }
 }
