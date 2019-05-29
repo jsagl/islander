@@ -52,8 +52,8 @@
             <h5>Booking</h5>
               <%= simple_form_for [@island, @booking] do |f| %>
                 <div class="justify-content-around">
-                  <%= f.input :start_date, as: :string, label:false, placeholder: "Start date",  input_html: { class: 'start-date' } %>
-                  <%= f.input :end_date, as: :string, label: false, label:false, placeholder: "End date",  input_html: { class: 'end-date' } %>
+                  <%= f.input :start_date, as: :string, label:false, placeholder: "Start date",  input_html: { class: 'start-date' }, required: false %>
+                  <%= f.input :end_date, as: :string, label: false, label:false, placeholder: "End date",  input_html: { class: 'end-date' }, required: false %>
                   <%= f.submit "Book now", class: "btn btn-primary w-100" %>
                 </div>
               <% end %>

@@ -1,16 +1,17 @@
 <div class="banner" id="home-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.3) 50%), url(https://res.cloudinary.com/dwkzd2xzh/image/upload/v1558957833/index_banner_cmpdu3.jpg);">
   <div class="container">
     <h3>Welcome on Islander!</h3>
-    <p>Book the island of your dreams.</p>
+    <p> Book <span id="banner-typed-text"></span></p>
 
-     <%= form_tag root_path, method: :get do %>
+
+     <%= form_tag root_path, method: :get, remote: :true do %>
       <div class="search-form-control form-group">
-        <input <%= text_field_tag :query,
+        <%= text_field_tag :query,
         params[:query],
         class: "form-control string required",
         placeholder: "An island is waiting for you."
         %>
-        <button name="button" type="submit" class="btn btn-flat">
+        <button id="submit-search" name="button" type="submit" class="btn btn-flat">
           <i class="fas fa-search"></i> GO
         </button>
       </div>
@@ -20,17 +21,7 @@
 
 <div>
   <div class="home-island-cards">
-    <% @islands.each do |island| %>
-      <div class="home-island-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path island.photo, crop: :fill %>')">
-        <div class="home-island-card-name">
-          <%= island.name %>
-        </div>
-        <div class="home-island-card-country">
-            <p><%= island.country %></p>
-        </div>
-        <%= link_to "", island_path(island), class: 'home-island-card-actions' %>
-      </div>
-    <% end %>
+    <%= render 'search', islands: @islands %>
   </div>
 </div>
 

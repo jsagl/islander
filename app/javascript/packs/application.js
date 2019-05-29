@@ -7,9 +7,11 @@ import { findWeather } from '../plugins/map';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { initSelect2 } from '../plugins/init_select2';
 import { tabManager } from '../component/tab';
-import { flatpickr } from "../plugins/flatpickr";
+import { initFlatpickr } from "../plugins/flatpickr";
+import { scrollSearch } from '../components/scrollSearch';
+import { loadDynamicBannerText } from '../components/banner';
 
-
+const banner = document.getElementById("home-banner");
 const map = document.getElementById("map");
 const select = document.querySelector(".select2")
 const  startDate = document.querySelector(".start-date");
@@ -27,8 +29,15 @@ if (select) {
 tabManager();
 
 if (startDate || endDate) {
-  flatpickr();
+  initFlatpickr();
+}
+
+if (banner){
+  loadDynamicBannerText();
 }
 
 initUpdateNavbarOnScroll();
+
+scrollSearch();
+
 
