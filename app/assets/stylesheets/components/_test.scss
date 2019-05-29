@@ -1,33 +1,15 @@
-// Recap
 
-.card .body {
-  font-weight: 400;
-  color: #424242;
-  padding: 20px;
-  font-size: 14px;
-}
+// .row {
+//   display: flex;
+//   flex-wrahttps://github.com/jsagl/islanderp: wrap;
+//   margin-right: -15px;
+//   margin-left: -15px;
+// }
 
-.m-b-0{
-  margin-bottom: 0px;
-}
-
-.text-muted {
-  color: #6c757d !important;
-}
-///DASHBOARD
-
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
-}
-
-.col-lg-12 {
-  flex: 0 0 100%;
-  max-width: 100%;
-}
+// .col-lg-12 {
+//   flex: 0 0 100%;
+//   max-width: 100%;
+// }
 
 .carde .bg-dark {
   background: #191f28 !important;
@@ -39,16 +21,12 @@
 
 .card {
   border-radius: .55rem;
-  background: #fff;
   margin-bottom: 30px;
   transition: .5s;
   border: 0;
   position: relative;
-  width: 70%;
+  width: 100%;
   box-shadow: 0 1px 4px 0 rgba(0,0,0,0.1);
-  text-align: center;
-  height: 90px;
-  box-shadow: 12px 12px 2px 1px rgba(255, 183, 22, .5);
 }
 
 .carde .header {
@@ -56,10 +34,6 @@
   padding: 20px;
   position: relative;
   box-shadow: none;
-}
-
-.body {
-  min-height: 60vh;
 }
 
 .carde .header h2 {
