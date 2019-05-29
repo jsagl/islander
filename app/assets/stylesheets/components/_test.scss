@@ -10,6 +10,11 @@
 //   flex: 0 0 100%;
 //   max-width: 100%;
 // }
+
+.row-70{
+  width: 70%;
+  margin: auto !important;
+}
 .data{
   justify-content: space-around;
 }
@@ -32,6 +37,10 @@
   position: relative;
   width: 100%;
   box-shadow: 0 1px 4px 0 rgba(0,0,0,0.1);
+}
+
+.card-dashboard {
+  text-align: center;
 }
 
 .card-frantz{
@@ -199,6 +208,9 @@ h6 {
 .tabs-underlined .tab-underlined.active {
   opacity: 1;
   border-bottom: 3px solid #555555;
+}
+.row{
+  margin: 0px;
 }
 
 
