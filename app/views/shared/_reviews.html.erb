@@ -1,8 +1,19 @@
 
     <h3><% @island.reviews.each do |review|%></h3>
         <div class="mb-3">
-          <p style="margin-bottom: 4px;"><%= "#{review.booking.user.first_name.capitalize}" + ". " + "#{review.booking.user.last_name.first}." %> gave <strong><%=review.stars%> stars</strong> on <%= review.created_at.strftime("%b %d, %Y") %>:</p>
-          <p style="margin-bottom: 4px;"><em><%=review.content%></em></p>
+          <p style="margin-bottom: 4px;"><strong><%= "#{review.booking.user.first_name.capitalize}" + ". " + "#{review.booking.user.last_name.first}."%></strong> granted
+            <% if !@island.rating.nil? %>
+              <% @island.rating.round.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+            <% (5 - @island.rating.round).times do %>
+                <i class="far fa-star"></i>
+              <% end %>
+            <% else %>
+              <%= "No rating yet" %>
+            <% end %>
+             on <%= review.created_at.strftime("%b %d, %Y") %>:</p>
+          <p style="margin-bottom: 4px;"><em>"<%=review.content%></em>"</p>
         </div>
         <br>
     <% end %>

@@ -26,10 +26,10 @@
       <p class="text-muted">New Reviews</p>
   </div>
   <div class="card card-dashboard col-2 m-4">
-    <h3 class="m-b-0 number count-to"><%= sumRevenue %> $
+    <h3 class="m-b-0 number count-to"><%= number_with_delimiter(sumRevenue, delimiter: ",") %> €
 
       </h3>
-      <p class="text-muted">earn</p>
+      <p class="text-muted">in revenue</p>
   </div>
   <div class="card card-dashboard col-2 m-4">
     <h3 class="m-b-0 number count-to" ><%= sumBooking %>
@@ -41,7 +41,7 @@
     <h3 class="m-b-0 number count-to"><%= sumIsland %>
 
       </h3>
-      <p class="text-muted">Islands own</p>
+      <p class="text-muted">Islands owned</p>
   </div>
 </div>
 
@@ -146,7 +146,7 @@
                           <% island.bookings.each do |booking| %>
                             <% islandBooking += booking.total_price %>
                           <% end %>
-                        <td class="text-center"><%= islandBooking %></td>
+                        <td class="text-center"><%= number_with_delimiter(islandBooking, delimiter: ',') %>€</td>
                         <% if island.rating  %>
                           <td class="text-center"><%= render 'shared/rating', island: island %></span></td>
                         <% else %>
@@ -169,17 +169,17 @@
                       <th class="text-center">Island</th>
                       <th class="text-center">From</th>
                       <th class="text-center">To</th>
-                      <th class="text-center">Price ($)</th>
+                      <th class="text-center">Price (€)</th>
                       <th class="text-center">Rate</th>
                     </tr>
                   </thead>
                   <tbody>
                     <% my_bookings.each do |booking|%>
                       <tr>
-                        <td class="text-center"><%=booking.island.name %></td>
+                        <td class="text-center"><%= link_to booking.island.name, island_path(booking.island) %></td>
                         <td class="text-center"><%=booking.start_date.strftime("%b %d, %Y")%></td>
                         <td class="text-center"><%=booking.end_date.strftime("%b %d, %Y")%></td>
-                        <td class="text-center"><%=booking.total_price%></td>
+                        <td class="text-center"><%=number_with_delimiter(booking.total_price, delimiter: ',')%>€</td>
                         <td class="text-center">
                           <%= render 'shared/reviewmodal', booking: booking %>
                         </td>
@@ -199,7 +199,7 @@
                       <th class="text-center">Client</th>
                       <th class="text-center">From</th>
                       <th class="text-center">To</th>
-                      <th class="text-center">Price ($)</th>
+                      <th class="text-center">Price (€)</th>
                       <th class="text-center">Review</th>
                       <th class="text-center">Cancel booking</th>
                     </tr>
@@ -209,15 +209,15 @@
                   <% my_islands.each do |island| %>
                     <% island.bookings.each do |booking|%>
                       <tr>
-                        <td class="text-center"><%=island.name  %></td>
+                        <td class="text-center"><%= link_to island.name, island_path(island) %></td>
                         <td class="text-center"><%=booking.user.first_name %></td>
                         <td class="text-center"><%=booking.start_date.strftime("%b %d, %Y")%></td>
                         <td class="text-center"><%=booking.end_date.strftime("%b %d, %Y")%></td>
-                        <td class="text-center"><%=booking.total_price%></td>
+                        <td class="text-center"><%=number_with_delimiter(booking.total_price, delimiter: ',')%>€</td>
                         <% if booking.review  %>
                           <td class="text-center"><%=booking.review.stars%> stars</span></td>
                         <% else %>
-                          <td class="text-center badge badge-warning" id="not-reviewed"><%= "not reviewed yet" %></span></td>
+                          <td class="text-center"><span id="not-reviewed">Not reviewed yet</span></td>
                         <% end %>
                         <td class="text-center"><%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fas fa-trash"></i><% end %></td>
                       </tr>

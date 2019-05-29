@@ -23,9 +23,13 @@ const bookingInfo = () => {
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     if (isNaN(diffDays) === false) {
       stayDuration.innerText = `Stay duration: ${pluralize(diffDays)} - `;
-      totalPrice.innerText = `Total price: ${totalPrice.dataset.pricePerDay * diffDays}€`;
+      totalPrice.innerText = `Total price: ${numberWithCommas(totalPrice.dataset.pricePerDay * diffDays)}€`;
     }
   })
+}
+
+const numberWithCommas = (x) => {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 const pluralize = (value) => {
