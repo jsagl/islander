@@ -1,10 +1,68 @@
+<!-- CARD -->
+
+<% sumReview = 0 %>
+<% sumRevenue = 0 %>
+<% sumBooking = 0 %>
+<% sumVisitors = 0 %>
+<% my_islands.each do |island| %>
+  <% sumBooking += island.bookings.all.count %>
+  <% sumRevenue += island.bookings.all.sum(:total_price) %>
+  <% sumVisitors += island.number_of_guests %>
+  <% island.bookings.each do |booking|%>
+    <% if booking.review %>
+      <% sumReview += 1 %>
+    <% end %>
+  <% end %>
+<% end %>
+
+
+<div class="row clearfix">
+  <div class="col-lg-3 col-md-6">
+    <div class="card">
+      <div class="body">
+        <h3 class="m-b-0 number count-to" data-from="0" data-to="1600" data-speed="2000" data-fresh-interval="700"><%= sumReview %> <i class="zmdi zmdi-trending-up float-right"></i></h3>
+        <p class="text-muted">New Feedbacks</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6">
+    <div class="card">
+      <div class="body">
+        <h3 class="m-b-0"><%=sumRevenue  %><i class="zmdi zmdi-trending-up float-right"></i></h3>
+        <p class="text-muted"> $ earn</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6">
+    <div class="card">
+      <div class="body">
+        <h3 class="m-b-0 number count-to" data-from="0" data-to="2105" data-speed="2000" data-fresh-interval="700"><%= sumBooking %> <i class="zmdi zmdi-trending-up float-right"></i>
+        </h3>
+        <p class="text-muted">Bookings</p>
+      </div>
+    </div>
+  </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="card">
+        <div class="body">
+          <h3 class="m-b-0 number count-to" data-from="0" data-to="2105" data-speed="2000" data-fresh-interval="700"><%= sumVisitors %><i class="zmdi zmdi-trending-up float-right"></i>
+          </h3>
+          <p class="text-muted">Visitors</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- DASHBOARD -->
 <div class="carde bg-dark">
   <div class="row clearfix">
     <div class="col-lg-12">
       <div class="carde bg-dark">
         <div class="body">
           <!-- Nav tabs -->
-          <ul class="nav nav-pills padding-0">
+          <ul class="nav nav-pills padding-0 justify-content-around">
             <li class="nav-item">
               <a class="nav-link active" id="global-tab-btn"data-toggle="tab" href="#global-view"> My Islands</a>
             </li>
@@ -89,7 +147,7 @@
                   <thead>
                     <tr>
                       <th class="text-center">Island</th>
-                      <th class="text-center">Owner</th>
+                      <th class="text-center">Client</th>
                       <th class="text-center">From</th>
                       <th class="text-center">To</th>
                       <th class="text-center">Price ($)</th>
@@ -110,7 +168,7 @@
                         <% if booking.review  %>
                           <td class="text-center"><%=booking.review.stars%> stars</span></td>
                         <% else %>
-                          <td class="text-center"><%= "Not reviewed yet" %></span></td>
+                          <td class="text-center badge badge-warning" id="not-reviewed"><%= "not reviewed yet" %></span></td>
                         <% end %>
                         <td class="text-center"><%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fas fa-trash"></i><% end %></td>
                       </tr>
