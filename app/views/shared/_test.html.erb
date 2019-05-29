@@ -18,7 +18,7 @@
 
 <div class="row clearfix">
   <div class="col-lg-3 col-md-6">
-    <div class="card">
+    <div class="card-frantz">
       <div class="body">
         <h3 class="m-b-0 number count-to" data-from="0" data-to="1600" data-speed="2000" data-fresh-interval="700"><%= sumReview %> <i class="zmdi zmdi-trending-up float-right"></i></h3>
         <p class="text-muted">New Feedbacks</p>
@@ -26,7 +26,7 @@
     </div>
   </div>
   <div class="col-lg-3 col-md-6">
-    <div class="card">
+    <div class="card-frantz">
       <div class="body">
         <h3 class="m-b-0"><%=sumRevenue  %><i class="zmdi zmdi-trending-up float-right"></i></h3>
         <p class="text-muted"> $ earn</p>
@@ -34,7 +34,7 @@
     </div>
   </div>
   <div class="col-lg-3 col-md-6">
-    <div class="card">
+    <div class="card-frantz">
       <div class="body">
         <h3 class="m-b-0 number count-to" data-from="0" data-to="2105" data-speed="2000" data-fresh-interval="700"><%= sumBooking %> <i class="zmdi zmdi-trending-up float-right"></i>
         </h3>
@@ -43,7 +43,7 @@
     </div>
   </div>
     <div class="col-lg-3 col-md-6">
-      <div class="card">
+      <div class="card-frantz">
         <div class="body">
           <h3 class="m-b-0 number count-to" data-from="0" data-to="2105" data-speed="2000" data-fresh-interval="700"><%= sumVisitors %><i class="zmdi zmdi-trending-up float-right"></i>
           </h3>
@@ -103,7 +103,7 @@
                         <% else %>
                           <td class="text-center"><%= "-" %></span></td>
                         <% end %>
-                        <td class="text-center"><%= link_to edit_island_path(island), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fas fa-edit"></i><% end %></td>
+                        <td class="text-center"><%= link_to edit_island_path(island) do %><i class="fas fa-edit"></i><% end %></td>
                         <td class="text-center"><%= link_to island_path(island), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fas fa-trash"></i><% end %></td>
                       </tr>
                   <% end %>
