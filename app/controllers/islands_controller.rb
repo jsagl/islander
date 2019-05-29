@@ -4,8 +4,16 @@ class IslandsController < ApplicationController
   def index
     if params[:query].present?
       @islands = policy_scope(Island).search_by_name_and_country_and_title_and_description("%#{params[:query]}%").order(created_at: :asc)
+      # respond_to do |format|
+      #   format.html { redirect_to root_path }
+      #   format.js
+      # end
     else
       @islands = policy_scope(Island).order(created_at: :asc)
+      # respond_to do |format|
+      #   format.html { render 'islands/index' }
+      #   format.js
+      # end
     end
   end
 
@@ -59,6 +67,7 @@ class IslandsController < ApplicationController
     @island.destroy
     redirect_to dashboard_path
   end
+
 
   private
 
