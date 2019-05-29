@@ -4,10 +4,12 @@
 <% sumRevenue = 0 %>
 <% sumBooking = 0 %>
 <% sumVisitors = 0 %>
+<% sumIsland = 0 %>
 <% my_islands.each do |island| %>
   <% sumBooking += island.bookings.all.count %>
   <% sumRevenue += island.bookings.all.sum(:total_price) %>
   <% sumVisitors += island.number_of_guests %>
+  <% sumIsland += 1 %>
   <% island.bookings.each do |booking|%>
     <% if booking.review %>
       <% sumReview += 1 %>
@@ -16,27 +18,64 @@
 <% end %>
 
 
-<div class="row clearfix">
+<div class="row justify-content-center row-70">
+  <div class="card card-dashboard col-2 m-4">
+    <h3 class="m-b-0 number count-to"><%= sumReview %>
+
+      </h3>
+      <p class="text-muted">New Reviews</p>
+  </div>
+  <div class="card card-dashboard col-2 m-4">
+    <h3 class="m-b-0 number count-to"><%= number_with_delimiter(sumRevenue, delimiter: ",") %> €
+
+      </h3>
+      <p class="text-muted">in revenue</p>
+  </div>
+  <div class="card card-dashboard col-2 m-4">
+    <h3 class="m-b-0 number count-to" ><%= sumBooking %>
+
+      </h3>
+      <p class="text-muted">Bookings</p>
+  </div>
+  <div class="card card-dashboard col-2 m-4">
+    <h3 class="m-b-0 number count-to"><%= sumIsland %>
+
+      </h3>
+      <p class="text-muted">Islands owned</p>
+  </div>
+</div>
+
+
+
+
+<!-- div class="row justify-content-center">
+  <div class="card col-12">
+  <div class="row clearfix ">
   <div class="col-lg-3 col-md-6">
     <div class="card-frantz">
-      <div class="body">
-        <h3 class="m-b-0 number count-to" data-from="0" data-to="1600" data-speed="2000" data-fresh-interval="700"><%= sumReview %> <i class="zmdi zmdi-trending-up float-right"></i></h3>
-        <p class="text-muted">New Feedbacks</p>
+      <div class="corp">
+        <h3 class="m-b-0 number count-to" data-from="0" data-to="1600" data-speed="2000" data-fresh-interval="700"><%= sumReview %>
+
+        </h3>
+        <p class="text-muted">New Reviews</p>
       </div>
     </div>
   </div>
   <div class="col-lg-3 col-md-6">
     <div class="card-frantz">
-      <div class="body">
-        <h3 class="m-b-0"><%=sumRevenue  %><i class="zmdi zmdi-trending-up float-right"></i></h3>
+      <div class="corp">
+        <h3 class="m-b-0"><%=sumRevenue  %>
+
+        </h3>
         <p class="text-muted"> $ earn</p>
       </div>
     </div>
   </div>
   <div class="col-lg-3 col-md-6">
     <div class="card-frantz">
-      <div class="body">
-        <h3 class="m-b-0 number count-to" data-from="0" data-to="2105" data-speed="2000" data-fresh-interval="700"><%= sumBooking %> <i class="zmdi zmdi-trending-up float-right"></i>
+      <div class="corp">
+        <h3 class="m-b-0 number count-to" data-from="0" data-to="2105" data-speed="2000" data-fresh-interval="700"><%= sumBooking %>
+
         </h3>
         <p class="text-muted">Bookings</p>
       </div>
@@ -44,23 +83,29 @@
   </div>
     <div class="col-lg-3 col-md-6">
       <div class="card-frantz">
-        <div class="body">
-          <h3 class="m-b-0 number count-to" data-from="0" data-to="2105" data-speed="2000" data-fresh-interval="700"><%= sumVisitors %><i class="zmdi zmdi-trending-up float-right"></i>
+        <div class="corp">
+          <h3 class="m-b-0 number count-to" data-from="0" data-to="2105" data-speed="2000" data-fresh-interval="700">
+            <%= sumIsland %>
           </h3>
-          <p class="text-muted">Visitors</p>
+          <p class="text-muted">Islands own</p>
         </div>
       </div>
     </div>
   </div>
 </div>
+</div>
+</div> -->
+
+
 
 
 <!-- DASHBOARD -->
-<div class="carde bg-dark">
+<div class="row justify-content-center">
+<div class="card col-11 mx-4 ">
   <div class="row clearfix">
     <div class="col-lg-12">
-      <div class="carde bg-dark">
-        <div class="body">
+      <div class="car ">
+        <div class="corp">
           <!-- Nav tabs -->
           <ul class="nav nav-pills padding-0 justify-content-around">
             <li class="nav-item">
@@ -96,10 +141,14 @@
 
                   <% my_islands.each do |island| %>
                       <tr>
-                        <td class="text-center"><%=island.name  %></td>
-                        <td class="text-center"><%=Booking.sum(:total_price) %></td>
+                        <td class="text-center"><%= link_to island.name, island_path(island) %></td>
+                          <% islandBooking = 0 %>
+                          <% island.bookings.each do |booking| %>
+                            <% islandBooking += booking.total_price %>
+                          <% end %>
+                        <td class="text-center"><%= number_with_delimiter(islandBooking, delimiter: ',') %>€</td>
                         <% if island.rating  %>
-                          <td class="text-center"><%='%.1f' % island.rating%></span></td>
+                          <td class="text-center"><%= render 'shared/rating', island: island %></span></td>
                         <% else %>
                           <td class="text-center"><%= "-" %></span></td>
                         <% end %>
@@ -120,17 +169,17 @@
                       <th class="text-center">Island</th>
                       <th class="text-center">From</th>
                       <th class="text-center">To</th>
-                      <th class="text-center">Price ($)</th>
+                      <th class="text-center">Price (€)</th>
                       <th class="text-center">Rate</th>
                     </tr>
                   </thead>
                   <tbody>
                     <% my_bookings.each do |booking|%>
                       <tr>
-                        <td class="text-center"><%=booking.island.name %></td>
+                        <td class="text-center"><%= link_to booking.island.name, island_path(booking.island) %></td>
                         <td class="text-center"><%=booking.start_date.strftime("%b %d, %Y")%></td>
                         <td class="text-center"><%=booking.end_date.strftime("%b %d, %Y")%></td>
-                        <td class="text-center"><%=booking.total_price%></td>
+                        <td class="text-center"><%=number_with_delimiter(booking.total_price, delimiter: ',')%>€</td>
                         <td class="text-center">
                           <%= render 'shared/reviewmodal', booking: booking %>
                         </td>
@@ -150,7 +199,7 @@
                       <th class="text-center">Client</th>
                       <th class="text-center">From</th>
                       <th class="text-center">To</th>
-                      <th class="text-center">Price ($)</th>
+                      <th class="text-center">Price (€)</th>
                       <th class="text-center">Review</th>
                       <th class="text-center">Cancel booking</th>
                     </tr>
@@ -160,15 +209,15 @@
                   <% my_islands.each do |island| %>
                     <% island.bookings.each do |booking|%>
                       <tr>
-                        <td class="text-center"><%=island.name  %></td>
+                        <td class="text-center"><%= link_to island.name, island_path(island) %></td>
                         <td class="text-center"><%=booking.user.first_name %></td>
                         <td class="text-center"><%=booking.start_date.strftime("%b %d, %Y")%></td>
                         <td class="text-center"><%=booking.end_date.strftime("%b %d, %Y")%></td>
-                        <td class="text-center"><%=booking.total_price%></td>
+                        <td class="text-center"><%=number_with_delimiter(booking.total_price, delimiter: ',')%>€</td>
                         <% if booking.review  %>
                           <td class="text-center"><%=booking.review.stars%> stars</span></td>
                         <% else %>
-                          <td class="text-center badge badge-warning" id="not-reviewed"><%= "not reviewed yet" %></span></td>
+                          <td class="text-center"><span id="not-reviewed">Not reviewed yet</span></td>
                         <% end %>
                         <td class="text-center"><%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fas fa-trash"></i><% end %></td>
                       </tr>
@@ -184,6 +233,8 @@
       </div>
     </div>
   </div>
+</div>
+
 </div>
 
 

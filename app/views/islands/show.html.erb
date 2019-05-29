@@ -11,11 +11,7 @@
             <div class="d-flex justify-content-between align-items-center mb-3 mt-2">
               <h2 class="mt-2"><%= @island.name %></h2>
               <p class="mb-0">
-                <% if !@island.rating.nil? %>
-                  <%= '%.1f' % @island.rating %> stars
-                <% else %>
-                  <%= "No rating yet" %>
-                <% end %>
+                <%= render 'shared/rating', island: @island %>
               </p>
             </div>
             <h5><%= @island.title %></h5>
@@ -49,11 +45,17 @@
           <% if @island.user == current_user %>
             <%= link_to "Update my island's information", edit_island_path(@island), class:"btn btn-primary w-100" %>
           <% else %>
-            <h5>Booking</h5>
+            <div class="d-flex justify-content-between">
+              <h5>Booking</h5>
+              <div>
+                <span id="stay-duration"></span>
+                <span id="total-price" data-price-per-day="<%= @island.price_per_day %>"></span>
+              </div>
+            </div>
               <%= simple_form_for [@island, @booking] do |f| %>
                 <div class="justify-content-around">
-                  <%= f.input :start_date, as: :string, label:false, placeholder: "Start date",  input_html: { class: 'start-date' }, required: false %>
-                  <%= f.input :end_date, as: :string, label: false, label:false, placeholder: "End date",  input_html: { class: 'end-date' }, required: false %>
+                  <%= f.input :start_date, as: :string, label:false, required: false, placeholder: "Start date",  input_html: { class: 'start-date' } %>
+                  <%= f.input :end_date, as: :string, label: false, required: false, label:false, placeholder: "End date",  input_html: { class: 'end-date' } %>
                   <%= f.submit "Book now", class: "btn btn-primary w-100" %>
                 </div>
               <% end %>

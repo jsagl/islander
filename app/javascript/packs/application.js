@@ -10,6 +10,7 @@ import { tabManager } from '../component/tab';
 import { initFlatpickr } from "../plugins/flatpickr";
 import { scrollSearch } from '../components/scrollSearch';
 import { loadDynamicBannerText } from '../components/banner';
+import { bookingInfo } from "../components/booking";
 
 const banner = document.getElementById("home-banner");
 const map = document.getElementById("map");
@@ -36,8 +37,11 @@ if (banner){
   loadDynamicBannerText();
 }
 
-initUpdateNavbarOnScroll();
+
+if (startDate || endDate) {
+  bookingInfo();
+}
 
 scrollSearch();
 
-
+initUpdateNavbarOnScroll();

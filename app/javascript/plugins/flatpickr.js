@@ -1,15 +1,21 @@
 import flatpickr from 'flatpickr';
 import "flatpickr/dist/flatpickr.min.css";
+import $ from "jquery";
 
 const initFlatpickr = () => {
-  flatpickr(".start-date", {
+  let startpicker = flatpickr('.start-date', {
     minDate: "today",
-    defaultDate: "today"
+    maxDate: $('.end-date').attr('value'),
+    onClose: function(selectedDates, dateStr, instance) {
+      endpicker.set('minDate', dateStr);
+    },
   });
 
-  flatpickr(".end-date", {
-    minDate: new Date().fp_incr(1),
-    defaultDate: new Date().fp_incr(1),
+  let endpicker = flatpickr('.end-date', {
+    minDate: $('.start-date').attr('value'),
+    onClose: function(selectedDates, dateStr, instance) {
+      startpicker.set('maxDate', dateStr);
+    },
   });
 };
 

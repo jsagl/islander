@@ -11,13 +11,23 @@
 //   max-width: 100%;
 // }
 
-.carde .bg-dark {
-  background: #191f28 !important;
+.row-70{
+  width: 100%;
+  margin: auto !important;
+}
+.data{
+  justify-content: space-around;
+}
+
+.corp p{
+  font-family: "Raleway", "Helvetica", "sans-serif";
+}
+.car {
+  background: white !important;
   border-radius: 50px;
   margin-top: 30px;
   width: 1100px;
 }
-
 
 .card {
   border-radius: .55rem;
@@ -29,24 +39,50 @@
   box-shadow: 0 1px 4px 0 rgba(0,0,0,0.1);
 }
 
-.carde .header {
+.card-dashboard {
+  text-align: center;
+}
+
+.card-frantz{
+  position: relative;
+  flex: 0 0 240px;
+  width: 150px;
+  height: 90px;
+  background-color: #white;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.66) 0 10px 10px 0;
+
+}
+
+// .card-frantz {
+//   border-radius: 10px 100px / 120px;
+//   margin-bottom: 30px;
+//   transition: .5s;
+//   border: 0;
+//   position: relative;
+//   width: 100%;
+//   box-shadow: 0 1px 4px 0 rgba(0,0,0,0.1);
+// }
+
+.carde {
   color: #424242;
   padding: 20px;
   position: relative;
   box-shadow: none;
 }
 
-.carde .header h2 {
+.carde h2 {
   color: #757575;
   position: relative;
 }
 
-.theme-cyan .carde .header h2 strong {
+.theme-cyan .carde h2 strong {
   color: #49c5b6;
 }
 
 
-.carde .body {
+.carde .corp {
   padding: 20px;
 }
 // Nav tabs
@@ -99,10 +135,11 @@
 }
 
 #not-reviewed {
-  color:white !important;
-  background-color:transparent;
-  border-color: #FFB236;
-
+  border: 2px solid #FFB236;
+  margin: 5px 0px;
+  padding: 4px 6px;
+  font-weight: bolder;
+  border-radius: 3px;
 }
 .carde.bg-dark .table td, .carde.bg-dark .table th {
   border-top: 1px solid #232b38;
@@ -172,6 +209,9 @@ h6 {
 .tabs-underlined .tab-underlined.active {
   opacity: 1;
   border-bottom: 3px solid #555555;
+}
+.row{
+  margin: 0px;
 }
 
 

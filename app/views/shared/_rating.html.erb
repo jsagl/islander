@@ -1,0 +1,10 @@
+<% if !island.rating.nil? %>
+  <% island.rating.round.times do %>
+    <i class="fas fa-star"></i>
+  <% end %>
+<% (5 - island.rating.round).times do %>
+    <i class="far fa-star"></i>
+  <% end %>
+<% else %>
+  <%= "No rating yet" %>
+<% end %>
