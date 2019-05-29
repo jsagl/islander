@@ -8,7 +8,7 @@ import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { initSelect2 } from '../plugins/init_select2';
 import { tabManager } from '../component/tab';
 import { initFlatpickr } from "../plugins/flatpickr";
-import { scrollSearch } from '../components/scrollSearch';
+// import { scrollSearch } from '../components/scrollSearch';
 import { loadDynamicBannerText } from '../components/banner';
 import { bookingInfo } from "../components/booking";
 
@@ -42,6 +42,6 @@ if (startDate || endDate) {
   bookingInfo();
 }
 
-scrollSearch();
+// scrollSearch();
 
 initUpdateNavbarOnScroll();
