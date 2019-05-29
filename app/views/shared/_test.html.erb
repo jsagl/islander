@@ -152,7 +152,7 @@
                           <% end %>
                         <td class="text-center"><%= islandBooking %></td>
                         <% if island.rating  %>
-                          <td class="text-center"><%='%.1f' % island.rating%></span></td>
+                          <td class="text-center"><%= render 'shared/rating', island: island %></span></td>
                         <% else %>
                           <td class="text-center"><%= "-" %></span></td>
                         <% end %>
